@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "796847596922",
+    "project_id": "leattech",
+    "storage_bucket": "leattech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796847596922:android:096c7ca93bbbfd0543a2c3",
+        "android_client_info": {
+          "package_name": "com.pirksni.leantech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796847596922-so5740fmur613pu520lj94a98511627c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzRVyrJnUeNMWcAps6vpb1S4bSYnkFW2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796847596922-so5740fmur613pu520lj94a98511627c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
