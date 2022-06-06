@@ -17,7 +17,6 @@ import javax.inject.Singleton
         ActivityModule::class,
         FirebaseModule::class,
         FragmentModule::class,
-        NavigationModule::class,
         ViewModelModule::class,
     ]
 )
