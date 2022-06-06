@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="UnusedResources">
+        <ignore regexp="project_id" />
+    </issue>
+
+    <issue id="RestrictedApi" severity="ignore">
+        <ignore path="com.pirksni.sportnote.data.db.database.AppDatabase_Impl"/>
+    </issue>
+</lint>
