@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LeanTech</string>
+
+    <!-- menu_bottom_navigation -->
+    <string name="chat">Чат</string>
+    <string name="profile">Профиль</string>
+    <string name="eat">Еда</string>
 </resources>
