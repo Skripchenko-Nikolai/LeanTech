@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- fragment_filled_profile -->
+    <dimen name="button_save_profile_margin">50dp</dimen>
+    <dimen name="button_save_profile_padding_vertical">16dp</dimen>
+    <dimen name="text_input_margin_top">12dp</dimen>
+
+    <dimen name="fragment_margin">16dp</dimen>
+    <dimen name="button_width_stroke">2dp</dimen>
+    <dimen name="text_input_width_stroke">2dp</dimen>
+
+    <dimen name="text_large">18sp</dimen>
+</resources>
