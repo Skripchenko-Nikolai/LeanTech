@@ -15,5 +15,11 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="snackbarStyle">@style/SnackbarStyle</item>
+    </style>
+
+
+    <style name="SnackbarStyle" parent="Widget.MaterialComponents.Snackbar">
+        <item name="backgroundTint">@color/danube</item>
     </style>
 </resources>

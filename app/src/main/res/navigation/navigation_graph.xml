@@ -9,7 +9,11 @@
         android:id="@+id/filledProfileFragment"
         android:name="com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileFragment"
         android:label="FilledProfileFragment"
-        tools:layout="@layout/fragment_filled_profile" />
+        tools:layout="@layout/fragment_filled_profile">
+        <action
+            android:id="@+id/filled_profile_fragment_to_menu_fragment"
+            app:destination="@id/menuFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.pirksni.leantech.presentation.screen.menu.MenuFragment"
