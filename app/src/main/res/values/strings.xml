@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">LeanTech</string>
 
+    <!-- fragment_filled_profile -->
+    <string name="save_data_profile">Сохранить</string>
+    <string name="name_user">Имя</string>
+    <string name="second_name_user">Фамилия</string>
+    <string name="position_user">Должность</string>
+
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>
     <string name="profile">Профиль</string>

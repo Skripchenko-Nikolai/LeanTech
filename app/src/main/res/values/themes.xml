@@ -14,5 +14,41 @@
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="MainFragmentStyle">
+        <item name="backgroundColor">@color/white</item>
+        <item name="android:layout_margin">@dimen/fragment_margin</item>
+    </style>
+
+    <style name="OutlinedButtonDanube" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/danube</item>
+    </style>
+
+    <style name="OutlinedButtonDanube.2">
+        <item name="strokeWidth">@dimen/button_width_stroke</item>
+    </style>
+
+    <style name="OutlinedButtonDanube.2.TextDanube">
+        <item name="android:textColor">@color/danube</item>
+    </style>
+
+    <style name="OutlinedTextInputDanube" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_border_danube</item>
+    </style>
+
+    <style name="OutlinedTextInputDanube.2">
+        <item name="boxStrokeWidth">@dimen/text_input_width_stroke</item>
+    </style>
+
+    <style name="OutlinedTextInputDanube.2.HintDanube">
+        <item name="hintTextColor">@color/danube</item>
+    </style>
+
+    <style name="Text" />
+
+    <style name="Text.Large">
+        <item name="android:textSize">@dimen/text_large</item>
     </style>
 </resources>
