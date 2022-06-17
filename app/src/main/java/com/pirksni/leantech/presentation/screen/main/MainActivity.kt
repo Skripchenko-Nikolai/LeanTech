@@ -1,7 +1,6 @@
 package com.pirksni.leantech.presentation.screen.main
 
 import android.os.Bundle
-import android.util.Log
 import com.pirksni.leantech.R
 import com.pirksni.leantech.presentation.base.BaseActivity
 
