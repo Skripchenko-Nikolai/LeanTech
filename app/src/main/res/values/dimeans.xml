@@ -6,6 +6,14 @@
     <dimen name="button_save_profile_padding_vertical">16dp</dimen>
     <dimen name="text_input_margin_top">12dp</dimen>
 
+    <!-- fragment_filled_profile -->
+    <dimen name="icon_logo_margin_top">16dp</dimen>
+    <dimen name="filled_profile_et_email_margin_top">32dp</dimen>
+    <dimen name="filled_profile_text_input_margin_top">12dp</dimen>
+    <dimen name="filled_profile_text_input_margin_horizontal">12dp</dimen>
+    <dimen name="button_block_width">100dp</dimen>
+    <dimen name="button_block_padding">16dp</dimen>
+
     <dimen name="fragment_margin">16dp</dimen>
     <dimen name="button_width_stroke">2dp</dimen>
     <dimen name="text_input_width_stroke">2dp</dimen>

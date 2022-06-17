@@ -22,6 +22,10 @@
         <item name="android:layout_margin">@dimen/fragment_margin</item>
     </style>
 
+    <style name="RegistrationFragmentStyle">
+        <item name="android:background">@drawable/background_gradient_black_danube</item>
+    </style>
+
     <style name="OutlinedButtonDanube" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/danube</item>
     </style>
@@ -43,12 +47,20 @@
     </style>
 
     <style name="OutlinedTextInputDanube.2.HintDanube">
-        <item name="hintTextColor">@color/danube</item>
+        <item name="android:textColorHint">@color/danube</item>
+    </style>
+
+    <style name="OutlinedTextInputDanube.2.HintWhite">
+        <item name="android:textColorHint">@color/white</item>
     </style>
 
     <style name="Text" />
 
     <style name="Text.Large">
         <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="Text.Large.White">
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

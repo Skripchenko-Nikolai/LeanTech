@@ -22,6 +22,20 @@ fun View.updateBottomPaddingEdgeToEdge() {
 }
 
 /**
+ * extension нужен для full screen ставит отсупы снизу относительно insets
+ */
+fun View.updateTopPaddingEdgeToEdge() {
+    ViewCompat
+        .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
+            val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(
+                top = insets.top + this.marginTop
+            )
+            windowInsetsCompat
+        }
+}
+
+/**
  * extension нужен для full screen ставит отсупы сверху и снизу относительно insets и margin
  */
 fun View.updateVerticalPaddingEdgeToEdge() {

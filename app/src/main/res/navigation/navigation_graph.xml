@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/filledProfileFragment">
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.pirksni.leantech.presentation.screen.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registrartion" />
 
     <fragment
         android:id="@+id/filledProfileFragment"
         android:name="com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileFragment"
         android:label="FilledProfileFragment"
         tools:layout="@layout/fragment_filled_profile" />
+
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.pirksni.leantech.presentation.screen.menu.MenuFragment"
