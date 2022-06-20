@@ -60,4 +60,13 @@ class FilledProfileViewModel @Inject constructor(
         profileInteractor.saveProfile(_stateFlow.value)
         _uiLabelFlow.value = FilledProfileState.UiLabel.StartMenuScreen
     }
+
+    init {
+        val profileModel = profileInteractor.getProfile()
+        _stateFlow.value = _stateFlow.value.copy(email = profileModel?.email ?: NO_EMAIL)
+    }
+
+    companion object {
+        private const val NO_EMAIL = "Email отсутсвует"
+    }
 }

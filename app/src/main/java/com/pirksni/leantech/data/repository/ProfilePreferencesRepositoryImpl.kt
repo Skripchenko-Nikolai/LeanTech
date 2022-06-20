@@ -13,6 +13,6 @@ class ProfilePreferencesRepositoryImpl @Inject constructor(
         profileSharedPreferences.profile = profileModel
     }
 
-    override fun getProfile(): ProfileModel =
+    override fun getProfile(): ProfileModel? =
         profileSharedPreferences.profile
 }

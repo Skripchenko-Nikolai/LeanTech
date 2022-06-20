@@ -8,7 +8,7 @@ import javax.inject.Inject
 class ProfileSharedPreferences @Inject constructor(
     private val preferences: SharedPreferences
 ) {
-    var profile: ProfileModel
+    var profile: ProfileModel?
         get() {
             val stringVal = preferences.getString(PROFILE, "")
             return Gson().fromJson(stringVal, ProfileModel::class.java)

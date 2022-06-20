@@ -43,8 +43,8 @@ fun View.updateVerticalPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                top = insets.top + this.paddingTop,
-                bottom = insets.bottom + this.paddingBottom,
+                top = insets.top,
+                bottom = insets.bottom,
             )
             windowInsetsCompat
         }

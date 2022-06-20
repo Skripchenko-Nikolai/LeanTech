@@ -5,5 +5,5 @@ import com.pirksni.leantech.domain.model.ProfileModel
 interface ProfilePreferencesRepository {
 
     fun saveProfile(profileModel: ProfileModel)
-    fun getProfile(): ProfileModel
+    fun getProfile(): ProfileModel?
 }

@@ -5,6 +5,7 @@ import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileState
 
 interface ProfileInteractor {
 
+    fun saveEmail(email: String)
     fun saveProfile(model: FilledProfileState.Model)
-    fun getProfile(): ProfileModel
+    fun getProfile(): ProfileModel?
 }

@@ -1,7 +1,6 @@
 package com.pirksni.leantech.presentation.screen.registration
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
@@ -63,7 +62,7 @@ class RegistrationFragment : BaseFragment<RegistrationViewModel>(R.layout.fragme
     private fun handleSignINResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account = completedTask.getResult(ApiException::class.java)
-            // TODO implemented надо будет сохраннять email
+            viewModel.onEvent(RegistrationState.Event.OnChangeEmail(account.email.toString()))
             viewModel.onEvent(RegistrationState.Event.OnStartNextScreen)
         } catch (e: ApiException) {
             handleSignInError(e)
