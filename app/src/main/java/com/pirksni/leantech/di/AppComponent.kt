@@ -18,6 +18,9 @@ import javax.inject.Singleton
         FirebaseModule::class,
         FragmentModule::class,
         ViewModelModule::class,
+        PreferencesModule::class,
+        RepositoryModule::class,
+        InteractorModule::class,
     ]
 )
 @Singleton

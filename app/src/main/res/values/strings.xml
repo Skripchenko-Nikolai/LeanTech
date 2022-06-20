@@ -6,6 +6,9 @@
     <string name="name_user">Имя</string>
     <string name="second_name_user">Фамилия</string>
     <string name="position_user">Должность</string>
+    <string name="invalid_name">Невалидное имя</string>
+    <string name="invalid_second_name">Невалидная фамилия</string>
+    <string name="invalid_position">Невалидная должность</string>
 
     <!-- fragment_registration -->
     <string name="log_in">Авторизоваться</string>
