@@ -9,7 +9,16 @@
         android:id="@+id/registrationFragment"
         android:name="com.pirksni.leantech.presentation.screen.registration.RegistrationFragment"
         android:label="RegistrationFragment"
-        tools:layout="@layout/fragment_registrartion" />
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/registration_fragment_to_filled_profile_fragment"
+            app:destination="@id/filledProfileFragment"
+            app:popUpTo="@id/navigation_graph"/>
+        <action
+            android:id="@+id/registration_fragment_to_menu_fragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/navigation_graph"/>
+    </fragment>
 
     <fragment
         android:id="@+id/filledProfileFragment"

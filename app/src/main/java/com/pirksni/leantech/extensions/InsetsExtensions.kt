@@ -15,7 +15,7 @@ fun View.updateBottomPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                bottom = insets.bottom
+                bottom = insets.bottom + this.paddingBottom
             )
             windowInsetsCompat
         }
@@ -29,7 +29,7 @@ fun View.updateTopPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                top = insets.top + this.marginTop
+                top = insets.top + this.paddingTop
             )
             windowInsetsCompat
         }
@@ -43,8 +43,8 @@ fun View.updateVerticalPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                top = insets.top + this.marginTop,
-                bottom = insets.bottom + this.marginBottom,
+                top = insets.top + this.paddingTop,
+                bottom = insets.bottom + this.paddingBottom,
             )
             windowInsetsCompat
         }
