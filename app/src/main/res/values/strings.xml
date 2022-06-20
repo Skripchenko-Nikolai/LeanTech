@@ -8,8 +8,6 @@
     <string name="position_user">Должность</string>
 
     <!-- fragment_registration -->
-    <string name="email">Email</string>
-    <string name="password">Пароль</string>
     <string name="log_in">Авторизоваться</string>
 
     <!-- menu_bottom_navigation -->

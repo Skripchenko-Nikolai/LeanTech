@@ -8,9 +8,6 @@
 
     <!-- fragment_filled_profile -->
     <dimen name="icon_logo_margin_top">16dp</dimen>
-    <dimen name="filled_profile_et_email_margin_top">32dp</dimen>
-    <dimen name="filled_profile_text_input_margin_top">12dp</dimen>
-    <dimen name="filled_profile_text_input_margin_horizontal">12dp</dimen>
     <dimen name="button_block_padding">16dp</dimen>
 
     <dimen name="fragment_margin">16dp</dimen>
