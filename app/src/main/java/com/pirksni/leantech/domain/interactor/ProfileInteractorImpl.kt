@@ -12,8 +12,11 @@ class ProfileInteractorImpl @Inject constructor(
 ) : ProfileInteractor {
 
     override fun saveEmail(email: String) {
-        profilePreferencesRepository.saveProfile(email.mapToProfileModel())
+        profilePreferencesRepository.saveEmail(email)
     }
+
+    override fun getEmail(): String =
+        profilePreferencesRepository.getEmail()
 
     override fun saveProfile(model: FilledProfileState.Model) {
         profilePreferencesRepository.saveProfile(model.mapToProfileModel())

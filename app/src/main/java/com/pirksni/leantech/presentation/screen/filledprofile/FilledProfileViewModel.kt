@@ -62,11 +62,6 @@ class FilledProfileViewModel @Inject constructor(
     }
 
     init {
-        val profileModel = profileInteractor.getProfile()
-        _stateFlow.value = _stateFlow.value.copy(email = profileModel?.email ?: NO_EMAIL)
-    }
-
-    companion object {
-        private const val NO_EMAIL = "Email отсутсвует"
+        _stateFlow.value = _stateFlow.value.copy(email = profileInteractor.getEmail())
     }
 }

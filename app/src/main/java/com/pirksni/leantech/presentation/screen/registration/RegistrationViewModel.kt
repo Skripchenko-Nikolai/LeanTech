@@ -19,24 +19,19 @@ class RegistrationViewModel @Inject constructor(
     fun onEvent(event: RegistrationState.Event) {
         when (event) {
             RegistrationState.Event.OnStartNextScreen ->
-                chekFilledProfile()
+                checkSavedProfile()
             is RegistrationState.Event.OnChangeEmail ->
                 model = model.copy(email = event.email)
         }
     }
 
-    private fun chekFilledProfile() {
+    private fun checkSavedProfile() {
         val profileModel = profileInteractor.getProfile()
         if (profileModel == null) {
             profileInteractor.saveEmail(model.email)
             _uiLabelFlow.value = RegistrationState.UiLabel.OnStartFilledProfileScreen
         } else {
-            checkEmail()
+            _uiLabelFlow.value = RegistrationState.UiLabel.OnStartMenuScreen
         }
-    }
-
-    private fun checkEmail() {
-        _uiLabelFlow.value = RegistrationState.UiLabel.OnStartMenuScreen
-
     }
 }

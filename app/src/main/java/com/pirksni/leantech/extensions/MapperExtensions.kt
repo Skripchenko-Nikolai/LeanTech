@@ -10,11 +10,3 @@ fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
         secondName = this.secondName,
         position = this.position,
     )
-
-fun String.mapToProfileModel(): ProfileModel =
-    ProfileModel(
-        email = this,
-        name = null,
-        secondName = null,
-        position = null
-    )
