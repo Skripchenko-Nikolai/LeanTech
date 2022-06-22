@@ -1,10 +1,12 @@
 package com.pirksni.leantech.extensions
 
 import android.view.View
-
-fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE) { initializer() }
+import androidx.core.widget.doOnTextChanged
+import com.google.android.material.textfield.TextInputLayout
 
 private var lastClickTimestamp = 0L
+
+fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE) { initializer() }
 
 /**
  * setThrottledClickListener - прослушиватель кликов
@@ -20,5 +22,11 @@ fun View.setThrottledClickListener(delay: Long = 500L, clickListener: (View) -> 
             lastClickTimestamp = currentTime
             clickListener(this)
         }
+    }
+}
+
+fun TextInputLayout.textChangeListener(onTextChange: (String) -> Unit) {
+    this.editText?.doOnTextChanged { text, _, _, _ ->
+        onTextChange(text.toString())
     }
 }

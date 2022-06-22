@@ -5,8 +5,11 @@ import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileState
 
 fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
     ProfileModel(
-        email = this.email,
         name = this.name,
         secondName = this.secondName,
+        patronymic = this.patronymic,
+        dayBirthday = this.dayBirthday,
         position = this.position,
+        numberPhone = this.numberPhone,
+        nicknameTelegram = this.nicknameTelegram
     )
