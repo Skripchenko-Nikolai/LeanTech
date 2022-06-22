@@ -3,6 +3,7 @@ package com.pirksni.leantech.presentation.screen.filledprofile
 interface FilledProfileState {
 
     data class Model(
+        val email: String,
         val name: String,
         val secondName: String,
         val patronymic: String,
@@ -23,6 +24,7 @@ interface FilledProfileState {
 
         companion object {
             val DEFAULT = Model(
+                email = "",
                 name = "",
                 secondName = "",
                 patronymic = "",

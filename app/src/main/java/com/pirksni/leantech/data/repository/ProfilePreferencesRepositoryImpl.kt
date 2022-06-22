@@ -9,10 +9,17 @@ class ProfilePreferencesRepositoryImpl @Inject constructor(
     private val profileSharedPreferences: ProfileSharedPreferences
 ) : ProfilePreferencesRepository {
 
+    override fun saveEmail(email: String) {
+        profileSharedPreferences.email = email
+    }
+
+    override fun getEmail(): String =
+        profileSharedPreferences.email
+
     override fun saveProfile(profileModel: ProfileModel) {
         profileSharedPreferences.profile = profileModel
     }
 
-    override fun getProfile(): ProfileModel =
+    override fun getProfile(): ProfileModel? =
         profileSharedPreferences.profile
 }

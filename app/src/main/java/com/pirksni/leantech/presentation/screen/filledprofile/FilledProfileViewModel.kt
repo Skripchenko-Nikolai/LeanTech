@@ -76,4 +76,8 @@ class FilledProfileViewModel @Inject constructor(
         profileInteractor.saveProfile(_stateFlow.value)
         _uiLabelFlow.value = FilledProfileState.UiLabel.StartMenuScreen
     }
+
+    init {
+        _stateFlow.value = _stateFlow.value.copy(email = profileInteractor.getEmail())
+    }
 }
