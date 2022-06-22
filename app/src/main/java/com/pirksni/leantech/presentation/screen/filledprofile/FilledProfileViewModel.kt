@@ -29,6 +29,14 @@ class FilledProfileViewModel @Inject constructor(
                 _stateFlow.value = model.copy(position = event.position)
             is FilledProfileState.Event.OnSecondNameChanged ->
                 _stateFlow.value = model.copy(secondName = event.secondName)
+            is FilledProfileState.Event.OnDayBirthdayChanged ->
+                _stateFlow.value = model.copy(dayBirthday = event.dayBirthday)
+            is FilledProfileState.Event.OnNicknameTelegramChanged ->
+                _stateFlow.value = model.copy(nicknameTelegram = event.nicknameTelegram)
+            is FilledProfileState.Event.OnNumberPhoneChanged ->
+                _stateFlow.value = model.copy(numberPhone = event.numberPhone)
+            is FilledProfileState.Event.OnPatronymicChanged ->
+                _stateFlow.value = model.copy(patronymic = event.patronymic)
         }
     }
 
@@ -48,6 +56,10 @@ class FilledProfileViewModel @Inject constructor(
                 _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
                 _stateFlow.value = model.copy(error = Error.INVALID_SECOND_NAME)
             }
+            model.dayBirthday == 0L -> {
+                _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
+                _stateFlow.value = model.copy(error = Error.INVALID_DAY_BIRTHDAY)
+            }
             model.position.isEmpty() -> {
                 _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
                 _stateFlow.value = model.copy(error = Error.INVALID_POSITION)
@@ -59,5 +71,9 @@ class FilledProfileViewModel @Inject constructor(
     private fun saveProfile() {
         profileInteractor.saveProfile(_stateFlow.value)
         _uiLabelFlow.value = FilledProfileState.UiLabel.StartMenuScreen
+    }
+
+    init {
+        _stateFlow.value = _stateFlow.value.copy(email = profileInteractor.getEmail())
     }
 }

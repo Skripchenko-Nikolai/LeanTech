@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- fragment_registration -->
+    <dimen name="icon_logo_margin_top">16dp</dimen>
+    <dimen name="button_block_padding">16dp</dimen>
+
     <!-- fragment_filled_profile -->
     <dimen name="button_save_profile_horizontal_margin">50dp</dimen>
     <dimen name="button_save_profile_bottom_margin">16dp</dimen>
@@ -16,9 +20,15 @@
 
     <dimen name="fragment_margin">16dp</dimen>
     <dimen name="fragment_padding">16dp</dimen>
+
+    <!-- view -->
     <dimen name="button_width_stroke">2dp</dimen>
     <dimen name="text_input_width_stroke">2dp</dimen>
+    <dimen name="outlined_text_view_padding">17dp</dimen>
+    <dimen name="outlined_text_view_radius">3dp</dimen>
+    <dimen name="outlined_text_view_stroke_width">2dp</dimen>
 
+    <!-- text_size -->
     <dimen name="text_large">18sp</dimen>
     <dimen name="text_xxx_large">24sp</dimen>
 </resources>

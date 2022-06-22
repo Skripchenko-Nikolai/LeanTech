@@ -48,7 +48,7 @@
                 tools:text="@string/profile_position" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvDayBirthday"
+                android:id="@+id/tvBirthday"
                 style="@style/Text.Large.Danube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,10 +58,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvTePosition"
-                tools:text="@string/profile_day_birthday" />
+                tools:text="@string/profile_birthday" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvNumberPhone"
+                android:id="@+id/tvPhoneNumber"
                 style="@style/Text.Large.Danube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,8 +70,8 @@
                 android:drawablePadding="@dimen/profile_drawable_padding"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDayBirthday"
-                tools:text="@string/profile_number_phone" />
+                app:layout_constraintTop_toBottomOf="@id/tvBirthday"
+                tools:text="@string/profile_phone_number" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvTelegram"
@@ -83,7 +83,7 @@
                 android:drawablePadding="@dimen/profile_drawable_padding"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvNumberPhone"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber"
                 tools:text="@string/profile_telegram" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

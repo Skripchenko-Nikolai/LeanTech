@@ -7,5 +7,9 @@ fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
     ProfileModel(
         name = this.name,
         secondName = this.secondName,
-        position = this.position
+        patronymic = this.patronymic,
+        birthday = this.dayBirthday,
+        position = this.position,
+        phoneNumber = this.numberPhone,
+        telegramNickname = this.nicknameTelegram
     )

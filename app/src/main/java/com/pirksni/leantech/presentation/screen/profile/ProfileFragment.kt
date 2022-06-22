@@ -8,6 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pirksni.leantech.R
 import com.pirksni.leantech.databinding.FragmentProfileBinding
 import com.pirksni.leantech.domain.model.ProfileModel
+import com.pirksni.leantech.extensions.formatDate
 import com.pirksni.leantech.extensions.launchWhenStarted
 import com.pirksni.leantech.extensions.updateVerticalPaddingEdgeToEdge
 import com.pirksni.leantech.presentation.base.BaseFragment
@@ -28,13 +29,20 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
         }
     }
 
-    private fun handleUiState(uiState: ProfileModel) {
+    private fun handleUiState(profileModel: ProfileModel?) {
         with(binding) {
-            tvFullName.text = getString(
-                R.string.profile_full_name,
-                uiState.name, uiState.secondName
-            )
-            tvTePosition.text = getString(R.string.profile_position, uiState.position)
+            profileModel?.let {
+                tvFullName.text =
+                    getString(R.string.profile_full_name, profileModel.name, profileModel.secondName)
+                tvTePosition.text =
+                    getString(R.string.profile_position, profileModel.position)
+                tvBirthday.text =
+                    getString(R.string.profile_position, profileModel.birthday.formatDate())
+                tvTelegram.text =
+                    getString(R.string.profile_telegram, profileModel.telegramNickname)
+                tvPhoneNumber.text =
+                    getString(R.string.profile_phone_number, profileModel.phoneNumber)
+            }
         }
     }
 
