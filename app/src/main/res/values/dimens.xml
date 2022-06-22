@@ -7,9 +7,18 @@
     <dimen name="button_save_profile_padding_vertical">16dp</dimen>
     <dimen name="text_input_margin_top">12dp</dimen>
 
+    <!-- fragment_profile -->
+    <dimen name="profile_drawable_padding">12dp</dimen>
+    <dimen name="profile_text_view_margin_top">12dp</dimen>
+    <dimen name="button_edit_profile_horizontal_margin">50dp</dimen>
+    <dimen name="button_edit_profile_bottom_margin">16dp</dimen>
+    <dimen name="button_edit_profile_padding_vertical">16dp</dimen>
+
     <dimen name="fragment_margin">16dp</dimen>
+    <dimen name="fragment_padding">16dp</dimen>
     <dimen name="button_width_stroke">2dp</dimen>
     <dimen name="text_input_width_stroke">2dp</dimen>
 
     <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xxx_large">24sp</dimen>
 </resources>

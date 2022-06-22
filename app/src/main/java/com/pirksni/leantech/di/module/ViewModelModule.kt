@@ -5,6 +5,7 @@ import com.pirksni.leantech.di.ViewModelKey
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileViewModel
 import com.pirksni.leantech.presentation.screen.main.MainViewModel
 import com.pirksni.leantech.presentation.screen.menu.MenuViewModel
+import com.pirksni.leantech.presentation.screen.profile.ProfileViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -24,6 +25,6 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MenuViewModel::class)
-    abstract fun bindMenuViewModel(viewModel: MenuViewModel): ViewModel
+    @ViewModelKey(ProfileViewModel::class)
+    abstract fun bindProfileViewModel(viewModel: ProfileViewModel): ViewModel
 }

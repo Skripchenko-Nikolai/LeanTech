@@ -10,6 +10,14 @@
     <string name="invalid_second_name">Невалидная фамилия</string>
     <string name="invalid_position">Невалидная должность</string>
 
+    <!-- fragment_profile -->
+    <string name="profile_full_name">%s %s</string>
+    <string name="profile_number_phone">Номер телефона: %s</string>
+    <string name="profile_day_birthday">День рождения: %s</string>
+    <string name="profile_telegram">Телеграм: %s</string>
+    <string name="profile_position">Должность: %s</string>
+    <string name="profile_edit">Редактировать</string>
+
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>
     <string name="profile">Профиль</string>
