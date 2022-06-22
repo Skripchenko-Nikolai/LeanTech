@@ -56,10 +56,6 @@ class FilledProfileViewModel @Inject constructor(
                 _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
                 _stateFlow.value = model.copy(error = Error.INVALID_SECOND_NAME)
             }
-            model.patronymic.isEmpty() -> {
-                _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
-                _stateFlow.value = model.copy(error = Error.INVALID_PATRONYMIC)
-            }
             model.dayBirthday == 0L -> {
                 _uiLabelFlow.value = FilledProfileState.UiLabel.HideProgressBar
                 _stateFlow.value = model.copy(error = Error.INVALID_DAY_BIRTHDAY)

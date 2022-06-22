@@ -64,8 +64,6 @@ class FilledProfileFragment :
                 showSnackbars(R.string.empty_filed_second_name)
             FilledProfileState.Model.Error.INVALID_POSITION ->
                 showSnackbars(R.string.empty_filed_position)
-            FilledProfileState.Model.Error.INVALID_PATRONYMIC ->
-                showSnackbars(R.string.empty_filed_patronymic)
             FilledProfileState.Model.Error.INVALID_DAY_BIRTHDAY ->
                 showSnackbars(R.string.empty_filed_day_birthday)
             FilledProfileState.Model.Error.NONE -> {

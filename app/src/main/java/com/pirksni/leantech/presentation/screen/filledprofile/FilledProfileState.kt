@@ -16,7 +16,6 @@ interface FilledProfileState {
         enum class Error {
             INVALID_NAME,
             INVALID_SECOND_NAME,
-            INVALID_PATRONYMIC,
             INVALID_DAY_BIRTHDAY,
             INVALID_POSITION,
             NONE
