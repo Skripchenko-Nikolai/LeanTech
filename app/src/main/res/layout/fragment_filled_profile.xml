@@ -9,7 +9,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/fragment_margin"
-        app:layout_constraintBottom_toTopOf="@id/btnSaveProfile"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,13 +25,15 @@
                 style="@style/OutlinedTextInputDanube.2.HintDanube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_input_margin_top"
                 android:hint="@string/name_user">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etName"
                     style="@style/Text.Large"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -45,8 +48,33 @@
                     android:id="@+id/etSecondName"
                     style="@style/Text.Large"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiPatronymic"
+                style="@style/OutlinedTextInputDanube.2.HintDanube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:hint="@string/patronymic_user">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPatronymic"
+                    style="@style/Text.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDateBirthday"
+                style="@style/OutlinedTextViewDanube.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:hint="@string/day_birthday_user" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tiPosition"
@@ -60,23 +88,54 @@
                     android:id="@+id/etPosition"
                     style="@style/Text.Large"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiNumberPhone"
+                style="@style/OutlinedTextInputDanube.2.HintDanube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:hint="@string/number_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumberPhone"
+                    style="@style/Text.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="11" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiNicknameTelegram"
+                style="@style/OutlinedTextInputDanube.2.HintDanube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:hint="@string/nickname_telegram">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNicknameTelegram"
+                    style="@style/Text.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveProfile"
+                style="@style/OutlinedButtonDanube.2.TextDanube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/button_save_profile_horizontal_margin"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:paddingVertical="@dimen/button_save_profile_padding_vertical"
+                android:text="@string/save_data_profile" />
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSaveProfile"
-        style="@style/OutlinedButtonDanube.2.TextDanube"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/button_save_profile_horizontal_margin"
-        android:layout_marginBottom="@dimen/button_save_profile_bottom_margin"
-        android:paddingVertical="@dimen/button_save_profile_padding_vertical"
-        android:text="@string/save_data_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <FrameLayout
         android:id="@+id/flProgress"
@@ -88,7 +147,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:layout_width="wrap_content"

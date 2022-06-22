@@ -52,6 +52,15 @@
         <item name="hintTextColor">@color/danube</item>
     </style>
 
+    <style name="OutlinedTextViewDanube">
+        <item name="android:background">@drawable/background_rectangle_danube37_radius_3</item>
+        <item name="android:padding">@dimen/outlined_text_view_padding</item>
+    </style>
+
+    <style name="OutlinedTextViewDanube.Large">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
     <style name="Text" />
 
     <style name="Text.Large">

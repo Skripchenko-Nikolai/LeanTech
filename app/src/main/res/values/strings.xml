@@ -5,10 +5,16 @@
     <string name="save_data_profile">Сохранить</string>
     <string name="name_user">Имя</string>
     <string name="second_name_user">Фамилия</string>
+    <string name="patronymic_user">Отчество</string>
+    <string name="day_birthday_user">День рождения</string>
     <string name="position_user">Должность</string>
-    <string name="invalid_name">Невалидное имя</string>
-    <string name="invalid_second_name">Невалидная фамилия</string>
-    <string name="invalid_position">Невалидная должность</string>
+    <string name="number_phone">Номер телефона</string>
+    <string name="nickname_telegram">Никнейм в телеграме</string>
+    <string name="empty_field_name">Пустое поле имя</string>
+    <string name="empty_filed_second_name">Пустое поле фамилия</string>
+    <string name="empty_filed_position">Пустое поле должность</string>
+    <string name="empty_filed_patronymic">Пустое поле отчество</string>
+    <string name="empty_filed_day_birthday">Пустое поле день рождения</string>
 
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>
