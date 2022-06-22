@@ -7,7 +7,6 @@
 
     <!-- fragment_filled_profile -->
     <dimen name="button_save_profile_horizontal_margin">50dp</dimen>
-    <dimen name="button_save_profile_top_margin">16dp</dimen>
     <dimen name="button_save_profile_padding_vertical">16dp</dimen>
     <dimen name="text_input_margin_top">12dp</dimen>
 
