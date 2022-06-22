@@ -3,7 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/filledProfileFragment">
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.pirksni.leantech.presentation.screen.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/registration_fragment_to_filled_profile_fragment"
+            app:destination="@id/filledProfileFragment"
+            app:popUpTo="@id/navigation_graph" />
+        <action
+            android:id="@+id/registration_fragment_to_menu_fragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/navigation_graph" />
+    </fragment>
 
     <fragment
         android:id="@+id/filledProfileFragment"
@@ -12,8 +27,10 @@
         tools:layout="@layout/fragment_filled_profile">
         <action
             android:id="@+id/filled_profile_fragment_to_menu_fragment"
-            app:destination="@id/menuFragment"/>
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/navigation_graph" />
     </fragment>
+
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.pirksni.leantech.presentation.screen.menu.MenuFragment"

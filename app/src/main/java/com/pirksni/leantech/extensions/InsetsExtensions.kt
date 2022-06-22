@@ -15,7 +15,21 @@ fun View.updateBottomPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                bottom = insets.bottom
+                bottom = insets.bottom + this.paddingBottom
+            )
+            windowInsetsCompat
+        }
+}
+
+/**
+ * extension нужен для full screen ставит отсупы снизу относительно insets
+ */
+fun View.updateTopPaddingEdgeToEdge() {
+    ViewCompat
+        .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
+            val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(
+                top = insets.top + this.paddingTop
             )
             windowInsetsCompat
         }
@@ -29,8 +43,8 @@ fun View.updateVerticalPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                top = insets.top + this.marginTop,
-                bottom = insets.bottom + this.marginBottom,
+                top = insets.top,
+                bottom = insets.bottom,
             )
             windowInsetsCompat
         }
