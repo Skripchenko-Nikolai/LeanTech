@@ -1,5 +1,7 @@
 package com.pirksni.leantech.presentation.screen.profile
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
@@ -10,6 +12,7 @@ import com.pirksni.leantech.databinding.FragmentProfileBinding
 import com.pirksni.leantech.domain.model.ProfileModel
 import com.pirksni.leantech.extensions.formatDate
 import com.pirksni.leantech.extensions.launchWhenStarted
+import com.pirksni.leantech.extensions.setThrottledClickListener
 import com.pirksni.leantech.extensions.updateVerticalPaddingEdgeToEdge
 import com.pirksni.leantech.presentation.base.BaseFragment
 import kotlinx.coroutines.flow.onEach
@@ -22,6 +25,9 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             constraintLayout.updateVerticalPaddingEdgeToEdge()
+            tvPhoneNumber.setThrottledClickListener {
+                viewModel.onEvent(ProfileState.Event.OnPhoneNumberClick)
+            }
         }
         with(viewModel) {
             stateFlow.onEach(::handleUiState).launchWhenStarted(lifecycleScope)
@@ -33,7 +39,11 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
         with(binding) {
             profileModel?.let {
                 tvFullName.text =
-                    getString(R.string.profile_full_name, profileModel.name, profileModel.secondName)
+                    getString(
+                        R.string.profile_full_name,
+                        profileModel.name,
+                        profileModel.secondName
+                    )
                 tvTePosition.text =
                     getString(R.string.profile_position, profileModel.position)
                 tvBirthday.text =
@@ -55,6 +65,20 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
             }
             ProfileState.UiLabel.ShowProgressBar ->
                 binding.flProgress.isVisible = true
+            is ProfileState.UiLabel.CallPhone ->
+                callPhoneNumber(uiLabel.phoneNumber)
         }
+    }
+
+    private fun callPhoneNumber(phoneNumber: String?) {
+        // TODO implemented permission
+        phoneNumber?.let {
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse(TELEPHONE_URI + phoneNumber))
+            startActivity(intent)
+        }
+    }
+
+    companion object {
+        private const val TELEPHONE_URI = "tel:"
     }
 }

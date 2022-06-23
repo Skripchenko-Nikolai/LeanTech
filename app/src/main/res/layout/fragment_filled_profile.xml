@@ -26,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_input_margin_top"
-                android:hint="@string/name_user">
+                android:hint="@string/name_user"
+                app:helperText="@string/required_field">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etName"
@@ -42,7 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_input_margin_top"
-                android:hint="@string/second_name_user">
+                android:hint="@string/second_name_user"
+                app:helperText="@string/required_field">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etSecondName"
@@ -76,13 +78,22 @@
                 android:layout_marginTop="@dimen/text_input_margin_top"
                 android:hint="@string/day_birthday_user" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBirthdayHelperText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:hint="@string/required_field"
+                android:textAppearance="?attr/textAppearanceCaption" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tiPosition"
                 style="@style/OutlinedTextInputDanube.2.HintDanube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_input_margin_top"
-                android:hint="@string/position_user">
+                android:hint="@string/position_user"
+                app:helperText="@string/required_field">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPosition"

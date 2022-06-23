@@ -14,6 +14,7 @@
     <string name="empty_filed_second_name">Пустое поле фамилия</string>
     <string name="empty_filed_position">Пустое поле должность</string>
     <string name="empty_filed_day_birthday">Пустое поле день рождения</string>
+    <string name="required_field">Обязательное поле</string>
 
     <!-- fragment_registration -->
     <string name="log_in">Авторизоваться</string>
