@@ -36,12 +36,13 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
                     getString(
                         R.string.profile_full_name,
                         profileModel.name,
-                        profileModel.secondName
+                        profileModel.secondName,
+                        profileModel.patronymic
                     )
                 tvTePosition.text =
                     getString(R.string.profile_position, profileModel.position)
                 tvBirthday.text =
-                    getString(R.string.profile_position, profileModel.birthday.formatDate())
+                    getString(R.string.profile_birthday, profileModel.birthday.formatDate())
             }
             tvPhoneNumber.text =
                 getString(
