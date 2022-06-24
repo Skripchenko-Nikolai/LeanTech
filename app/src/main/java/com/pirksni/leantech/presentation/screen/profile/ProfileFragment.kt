@@ -31,29 +31,37 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
 
     private fun handleUiState(profileModel: ProfileModel?) {
         with(binding) {
-            profileModel?.let {
-                tvFullName.text =
-                    getString(
-                        R.string.profile_full_name,
-                        profileModel.name,
-                        profileModel.secondName,
-                        profileModel.patronymic
-                    )
-                tvTePosition.text =
-                    getString(R.string.profile_position, profileModel.position)
-                tvBirthday.text =
-                    getString(R.string.profile_birthday, profileModel.birthday.formatDate())
-            }
-            tvPhoneNumber.text =
+            tvTePosition.text =
+                getString(R.string.profile_position, profileModel?.position)
+            tvBirthday.text =
+                getString(R.string.profile_birthday, profileModel?.birthday?.formatDate())
+            tvFullName.text =
                 getString(
-                    R.string.profile_phone_number,
-                    profileModel?.phoneNumber ?: R.string.no_number
+                    R.string.profile_full_name,
+                    profileModel?.secondName,
+                    profileModel?.name,
+                    profileModel?.patronymic
                 )
+            setPhoneNumber(profileModel)
             tvTelegram.text =
                 getString(
                     R.string.profile_telegram,
                     profileModel?.telegramNickname ?: R.string.no_telegram
                 )
+        }
+    }
+
+    private fun setPhoneNumber(profileModel: ProfileModel?) {
+        with(binding) {
+            if (profileModel == null) {
+                tvPhoneNumber.text = getText(R.string.no_number)
+            } else {
+                tvPhoneNumber.text =
+                    getString(
+                        R.string.profile_phone_number,
+                        "+${profileModel.phoneNumber}"
+                    )
+            }
         }
     }
 

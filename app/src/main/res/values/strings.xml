@@ -21,7 +21,7 @@
 
     <!-- fragment_profile -->
     <string name="profile_full_name">%s %s %s</string>
-    <string name="profile_phone_number">Номер телефона: +%s</string>
+    <string name="profile_phone_number">Номер телефона: %s</string>
     <string name="profile_birthday">День рождения: %s</string>
     <string name="profile_telegram">Телеграм: %s</string>
     <string name="profile_position">Должность: %s</string>

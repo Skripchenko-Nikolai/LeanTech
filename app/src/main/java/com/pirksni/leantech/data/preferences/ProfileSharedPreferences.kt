@@ -10,7 +10,7 @@ class ProfileSharedPreferences @Inject constructor(
 ) {
     var profile: ProfileModel?
         get() {
-            val stringVal = preferences.getString(PROFILE, "")
+            val stringVal = preferences.getString(PROFILE, null)
             return Gson().fromJson(stringVal, ProfileModel::class.java)
         }
         set(value) {
