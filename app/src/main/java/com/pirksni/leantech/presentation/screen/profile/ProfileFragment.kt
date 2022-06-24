@@ -1,7 +1,5 @@
 package com.pirksni.leantech.presentation.screen.profile
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
@@ -12,9 +10,7 @@ import com.pirksni.leantech.databinding.FragmentProfileBinding
 import com.pirksni.leantech.domain.model.ProfileModel
 import com.pirksni.leantech.extensions.formatDate
 import com.pirksni.leantech.extensions.launchWhenStarted
-import com.pirksni.leantech.extensions.setThrottledClickListener
 import com.pirksni.leantech.extensions.updateVerticalPaddingEdgeToEdge
-import com.pirksni.leantech.extensions.showSnackbars
 import com.pirksni.leantech.presentation.base.BaseFragment
 import kotlinx.coroutines.flow.onEach
 
@@ -26,9 +22,6 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             constraintLayout.updateVerticalPaddingEdgeToEdge()
-            tvPhoneNumber.setThrottledClickListener {
-                viewModel.onEvent(ProfileState.Event.OnPhoneNumberClick)
-            }
         }
         with(viewModel) {
             stateFlow.onEach(::handleUiState).launchWhenStarted(lifecycleScope)
@@ -72,18 +65,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
             }
             ProfileState.UiLabel.ShowProgressBar ->
                 binding.flProgress.isVisible = true
-            is ProfileState.UiLabel.CallPhone ->
-                uiLabel.phoneNumber?.let(::callPhoneNumber) ?: showSnackbars(R.string.no_number)
 
         }
-    }
-
-    private fun callPhoneNumber(phoneNumber: String) {
-        val intent = Intent(Intent.ACTION_DIAL, Uri.parse(TELEPHONE_URI + phoneNumber))
-        startActivity(intent)
-    }
-
-    companion object {
-        private const val TELEPHONE_URI = "tel:"
     }
 }

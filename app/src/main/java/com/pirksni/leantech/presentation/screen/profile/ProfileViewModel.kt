@@ -16,12 +16,4 @@ class ProfileViewModel @Inject constructor(
     private val _uiLabelFlow =
         MutableStateFlow<ProfileState.UiLabel>(ProfileState.UiLabel.None)
     val uiLabelFlow = _uiLabelFlow.asStateFlow()
-
-    fun onEvent(event: ProfileState.Event) {
-        val model = _stateFlow.value
-        when (event) {
-            ProfileState.Event.OnPhoneNumberClick ->
-                _uiLabelFlow.value = ProfileState.UiLabel.CallPhone(model?.phoneNumber)
-        }
-    }
 }
