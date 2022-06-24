@@ -8,8 +8,8 @@ fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
         name = this.name,
         secondName = this.secondName,
         patronymic = this.patronymic,
-        dayBirthday = this.dayBirthday,
+        birthday = this.dayBirthday,
         position = this.position,
-        numberPhone = this.numberPhone,
-        nicknameTelegram = this.nicknameTelegram
+        phoneNumber = this.numberPhone,
+        telegramNickname = this.nicknameTelegram
     )

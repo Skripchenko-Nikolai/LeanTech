@@ -4,8 +4,8 @@ data class ProfileModel(
     val name: String,
     val secondName: String,
     val patronymic: String,
-    val dayBirthday: Long,
+    val birthday: Long,
     val position: String,
-    val numberPhone: String,
-    val nicknameTelegram: String,
+    val phoneNumber: String,
+    val telegramNickname: String,
 )
