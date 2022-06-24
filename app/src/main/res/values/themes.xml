@@ -82,4 +82,15 @@
     <style name="Text.XXLarge.Danube">
         <item name="android:textColor">@color/danube</item>
     </style>
+    <style name="Text.XXXLarge">
+        <item name="android:textSize">@dimen/text_xxx_large</item>
+    </style>
+
+    <style name="Text.XXXLarge.Danube">
+        <item name="android:textColor">@color/danube</item>
+    </style>
+
+    <style name="Text.Large.Danube">
+        <item name="android:textColor">@color/danube</item>
+    </style>
 </resources>

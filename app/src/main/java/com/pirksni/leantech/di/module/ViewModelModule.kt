@@ -6,6 +6,7 @@ import com.pirksni.leantech.presentation.screen.eat.EatViewModel
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileViewModel
 import com.pirksni.leantech.presentation.screen.main.MainViewModel
 import com.pirksni.leantech.presentation.screen.menu.MenuViewModel
+import com.pirksni.leantech.presentation.screen.profile.ProfileViewModel
 import com.pirksni.leantech.presentation.screen.registration.RegistrationViewModel
 import dagger.Binds
 import dagger.Module
@@ -21,6 +22,11 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
+    @ViewModelKey(RegistrationViewModel::class)
+    abstract fun bindRegistrationViewModel(viewModel: RegistrationViewModel): ViewModel
+
+    @Binds
+    @IntoMap
     @ViewModelKey(FilledProfileViewModel::class)
     abstract fun bindFilledProfileViewModel(viewModel: FilledProfileViewModel): ViewModel
 
@@ -31,11 +37,11 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(RegistrationViewModel::class)
-    abstract fun bindRegistrationViewModel(viewModel: RegistrationViewModel): ViewModel
+    @ViewModelKey(EatViewModel::class)
+    abstract fun bindEatViewModel(viewModel: EatViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(EatViewModel::class)
-    abstract fun bindEatViewModel(viewModel: EatViewModel): ViewModel
+    @ViewModelKey(ProfileViewModel::class)
+    abstract fun bindProfileViewModel(viewModel: ProfileViewModel): ViewModel
 }

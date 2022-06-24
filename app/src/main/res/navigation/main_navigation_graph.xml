@@ -35,5 +35,10 @@
         android:id="@+id/menuFragment"
         android:name="com.pirksni.leantech.presentation.screen.menu.MenuFragment"
         android:label="MenuFragment"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_menu_navigation_graph"
+            app:destination="@id/menu_navigation_graph" />
+    </fragment>
+    <include app:graph="@navigation/menu_navigation_graph" />
 </navigation>

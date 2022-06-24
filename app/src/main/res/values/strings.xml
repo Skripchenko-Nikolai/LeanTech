@@ -14,9 +14,20 @@
     <string name="empty_filed_second_name">Пустое поле фамилия</string>
     <string name="empty_filed_position">Пустое поле должность</string>
     <string name="empty_filed_day_birthday">Пустое поле день рождения</string>
+    <string name="required_field">Обязательное поле</string>
 
     <!-- fragment_registration -->
     <string name="log_in">Авторизоваться</string>
+
+    <!-- fragment_profile -->
+    <string name="profile_full_name">%s %s %s</string>
+    <string name="profile_phone_number">Номер телефона: %s</string>
+    <string name="profile_birthday">День рождения: %s</string>
+    <string name="profile_telegram">Телеграм: %s</string>
+    <string name="profile_position">Должность: %s</string>
+    <string name="profile_edit">Редактировать</string>
+    <string name="no_number">Номер отсутствует</string>
+    <string name="no_telegram">Телеграм отсутствует</string>
 
     <!-- fragment_eat -->
     <string name="fill">Заполнить</string>
