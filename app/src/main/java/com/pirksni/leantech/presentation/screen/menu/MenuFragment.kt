@@ -16,6 +16,28 @@ class MenuFragment : BaseFragment<MenuViewModel>(R.layout.fragment_menu) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             bottomNavigation.updateBottomPaddingEdgeToEdge()
+            initBottomNavigationView()
+        }
+    }
+
+
+    private fun initBottomNavigationView() {
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.eat -> {
+                    // TODO implemented
+                    true
+                }
+                R.id.chat -> {
+                    // TODO implemented
+                    true
+                }
+                R.id.profile -> {
+                    // TODO implemented
+                    true
+                }
+                else -> false
+            }
         }
     }
 }

@@ -18,6 +18,9 @@
     <!-- fragment_registration -->
     <string name="log_in">Авторизоваться</string>
 
+    <!-- fragment_eat -->
+    <string name="fill">Заполнить</string>
+
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>
     <string name="profile">Профиль</string>

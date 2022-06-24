@@ -10,7 +10,18 @@
     <dimen name="button_save_profile_padding_vertical">16dp</dimen>
     <dimen name="text_input_margin_top">12dp</dimen>
 
+    <!-- fragment_eat -->
+    <dimen name="fragment_eat_recycler_view_margin">16dp</dimen>
+    <dimen name="button_fill_eat_horizontal_margin">50dp</dimen>
+    <dimen name="button_fill_eat_padding_vertical">16dp</dimen>
+    <dimen name="button_fill_eat_margin_bottom">16dp</dimen>
+
+    <!-- item_person -->
+    <dimen name="text_view_full_name_margin_horizontal">8dp</dimen>
+    <dimen name="text_view_number_margin_horizontal">8dp</dimen>
+
     <dimen name="fragment_margin">16dp</dimen>
+    <dimen name="item_margin_vertical">16dp</dimen>
 
     <!-- view -->
     <dimen name="button_width_stroke">2dp</dimen>
@@ -21,4 +32,5 @@
 
     <!-- text_size -->
     <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xx_large">22sp</dimen>
 </resources>

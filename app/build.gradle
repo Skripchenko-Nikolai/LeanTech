@@ -36,7 +36,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -111,4 +111,14 @@ dependencies {
 
     // Google
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttp_version"
+
+    // Chucker
+    debugImplementation "com.github.chuckerteam.chucker:library:$chucker"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chucker"
 }

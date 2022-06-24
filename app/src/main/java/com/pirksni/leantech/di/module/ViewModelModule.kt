@@ -2,6 +2,7 @@ package com.pirksni.leantech.di.module
 
 import androidx.lifecycle.ViewModel
 import com.pirksni.leantech.di.ViewModelKey
+import com.pirksni.leantech.presentation.screen.eat.EatViewModel
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileViewModel
 import com.pirksni.leantech.presentation.screen.main.MainViewModel
 import com.pirksni.leantech.presentation.screen.menu.MenuViewModel
@@ -32,4 +33,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RegistrationViewModel::class)
     abstract fun bindRegistrationViewModel(viewModel: RegistrationViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EatViewModel::class)
+    abstract fun bindEatViewModel(viewModel: EatViewModel): ViewModel
 }
