@@ -26,6 +26,8 @@
     <string name="profile_telegram">Телеграм: %s</string>
     <string name="profile_position">Должность: %s</string>
     <string name="profile_edit">Редактировать</string>
+    <string name="no_number">Номер отсутствует</string>
+    <string name="no_telegram">Телеграм отсутствует</string>
 
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>

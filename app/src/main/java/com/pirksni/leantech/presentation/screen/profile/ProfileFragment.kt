@@ -14,6 +14,7 @@ import com.pirksni.leantech.extensions.formatDate
 import com.pirksni.leantech.extensions.launchWhenStarted
 import com.pirksni.leantech.extensions.setThrottledClickListener
 import com.pirksni.leantech.extensions.updateVerticalPaddingEdgeToEdge
+import com.pirksni.leantech.extensions.showSnackbars
 import com.pirksni.leantech.presentation.base.BaseFragment
 import kotlinx.coroutines.flow.onEach
 
@@ -48,11 +49,17 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
                     getString(R.string.profile_position, profileModel.position)
                 tvBirthday.text =
                     getString(R.string.profile_position, profileModel.birthday.formatDate())
-                tvTelegram.text =
-                    getString(R.string.profile_telegram, profileModel.telegramNickname)
-                tvPhoneNumber.text =
-                    getString(R.string.profile_phone_number, profileModel.phoneNumber)
             }
+            tvPhoneNumber.text =
+                getString(
+                    R.string.profile_phone_number,
+                    profileModel?.phoneNumber ?: R.string.no_number
+                )
+            tvTelegram.text =
+                getString(
+                    R.string.profile_telegram,
+                    profileModel?.telegramNickname ?: R.string.no_telegram
+                )
         }
     }
 
@@ -66,16 +73,14 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
             ProfileState.UiLabel.ShowProgressBar ->
                 binding.flProgress.isVisible = true
             is ProfileState.UiLabel.CallPhone ->
-                callPhoneNumber(uiLabel.phoneNumber)
+                uiLabel.phoneNumber?.let(::callPhoneNumber) ?: showSnackbars(R.string.no_number)
+
         }
     }
 
-    private fun callPhoneNumber(phoneNumber: String?) {
-        // TODO implemented permission
-        phoneNumber?.let {
-            val intent = Intent(Intent.ACTION_CALL, Uri.parse(TELEPHONE_URI + phoneNumber))
-            startActivity(intent)
-        }
+    private fun callPhoneNumber(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_DIAL, Uri.parse(TELEPHONE_URI + phoneNumber))
+        startActivity(intent)
     }
 
     companion object {
