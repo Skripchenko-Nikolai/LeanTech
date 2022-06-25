@@ -30,7 +30,6 @@
     <string name="no_telegram">Телеграм отсутствует</string>
 
     <!-- fragment_eat -->
-    <string name="fill">Заполнить</string>
 
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>

@@ -1,6 +1,8 @@
 package com.pirksni.leantech.di.module
 
+import com.pirksni.leantech.domain.interactor.PersonInteractorImpl
 import com.pirksni.leantech.domain.interactor.ProfileInteractorImpl
+import com.pirksni.leantech.presentation.interactor.PersonInteractor
 import com.pirksni.leantech.presentation.interactor.ProfileInteractor
 import dagger.Binds
 import dagger.Module
@@ -9,5 +11,8 @@ import dagger.Module
 abstract class InteractorModule {
 
     @Binds
-    abstract fun provideProfileInteracotr(interactor: ProfileInteractorImpl): ProfileInteractor
+    abstract fun bindsProfileInteracotr(interactor: ProfileInteractorImpl): ProfileInteractor
+
+    @Binds
+    abstract fun bindsPersonInteractor(interactor: PersonInteractorImpl): PersonInteractor
 }

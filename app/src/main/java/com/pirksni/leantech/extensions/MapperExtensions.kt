@@ -17,9 +17,9 @@ fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
     )
 
 fun PersonResponse.mapToPersonModel(): List<PersonModel> =
-    this.persons.map { personValueResponse ->
+    this.persons.filter { it.size > 1 }.map {
         PersonModel(
-            number = personValueResponse.value[0],
-            fullName = personValueResponse.value[1]
+            number = it[0],
+            fullName = it[1]
         )
     }

@@ -10,6 +10,6 @@ class PersonNetworkRepositoryImpl @Inject constructor(
     private val personApi: PersonApi,
 ) : PersonNetworkRepository {
 
-    override suspend fun putPersons(): List<PersonModel> =
-        personApi.putPerson().mapToPersonModel()
+    override suspend fun getPersons(): List<PersonModel> =
+        personApi.getPerson().mapToPersonModel()
 }

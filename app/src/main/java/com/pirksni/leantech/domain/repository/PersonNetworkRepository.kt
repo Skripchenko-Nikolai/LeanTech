@@ -4,5 +4,5 @@ import com.pirksni.leantech.domain.model.PersonModel
 
 interface PersonNetworkRepository {
 
-    suspend fun putPersons(): List<PersonModel>
+    suspend fun getPersons(): List<PersonModel>
 }

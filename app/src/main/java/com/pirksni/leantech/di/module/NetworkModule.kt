@@ -1,13 +1,11 @@
 package com.pirksni.leantech.di.module
 
 import android.content.Context
-import android.webkit.URLUtil
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.pirksni.leantech.BuildConfig
 import com.pirksni.leantech.data.api.LeanTechServiceApi
 import dagger.Module
 import dagger.Provides
-import okhttp3.Authenticator
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -43,7 +41,7 @@ class NetworkModule {
 
 
     companion object {
-        private const val URL = "https://sheets.googleapis.com/v4/spreadsheets"
+        private const val URL = "https://sheets.googleapis.com/v4/spreadsheets/"
         private const val TIMEOUT = 100L
     }
 }
