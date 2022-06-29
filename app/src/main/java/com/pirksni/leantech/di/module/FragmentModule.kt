@@ -1,5 +1,6 @@
 package com.pirksni.leantech.di.module
 
+import com.pirksni.leantech.presentation.screen.eat.EatFragment
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileFragment
 import com.pirksni.leantech.presentation.screen.menu.MenuFragment
 import com.pirksni.leantech.presentation.screen.profile.ProfileFragment
@@ -18,6 +19,9 @@ interface FragmentModule {
 
     @ContributesAndroidInjector
     fun provideMenuFragment(): MenuFragment
+
+    @ContributesAndroidInjector
+    fun provideEatFragment(): EatFragment
 
     @ContributesAndroidInjector
     fun provideProfileFragment(): ProfileFragment

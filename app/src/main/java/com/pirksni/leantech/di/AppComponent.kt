@@ -19,8 +19,13 @@ import javax.inject.Singleton
         FragmentModule::class,
         ViewModelModule::class,
         PreferencesModule::class,
-        RepositoryModule::class,
+        RepositoryPreferencesModule::class,
+        RepositoryNetworkModule::class,
         InteractorModule::class,
+        NetworkModule::class,
+        ApiModule::class,
+        MoshiModule::class,
+        CoroutinesModule::class,
     ]
 )
 @Singleton

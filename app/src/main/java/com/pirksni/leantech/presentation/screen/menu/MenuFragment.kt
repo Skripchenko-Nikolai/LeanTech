@@ -2,6 +2,8 @@ package com.pirksni.leantech.presentation.screen.menu
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pirksni.leantech.R
 import com.pirksni.leantech.databinding.FragmentMenuBinding
@@ -16,6 +18,16 @@ class MenuFragment : BaseFragment<MenuViewModel>(R.layout.fragment_menu) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             bottomNavigation.updateBottomPaddingEdgeToEdge()
+            initBottomNavigationView()
         }
+    }
+
+
+    private fun initBottomNavigationView() {
+
+        val navHostFragment =
+            childFragmentManager.findFragmentById(R.id.menuContainer) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
     }
 }

@@ -6,10 +6,10 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class RepositoryModule {
+abstract class RepositoryPreferencesModule {
 
     @Binds
-    abstract fun provideProfilePreferencesRepository(
+    abstract fun bindsProfilePreferencesRepository(
         repository: ProfilePreferencesRepositoryImpl
     ): ProfilePreferencesRepository
 }

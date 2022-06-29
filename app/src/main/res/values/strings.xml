@@ -39,4 +39,5 @@
     <string name="sign_in_canceled_error">Вход был отменен или отменены разрешения входа</string>
     <string name="sign_in_progress_error">Выполняющийся процесс входа не модет быть продолжен</string>
     <string name="sign_in_failed_error">Попытка входа с текущей учетной записи не удалась</string>
+    <string name="no_internet_connection">Нет интернет подключения</string>
 </resources>

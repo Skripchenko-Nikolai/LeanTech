@@ -17,8 +17,16 @@
     <dimen name="button_edit_profile_bottom_margin">16dp</dimen>
     <dimen name="button_edit_profile_padding_vertical">16dp</dimen>
 
+    <!-- fragment_eat -->
+    <dimen name="fragment_eat_recycler_view_margin">16dp</dimen>
+
+    <!-- item_person -->
+    <dimen name="text_view_full_name_margin_horizontal">8dp</dimen>
+    <dimen name="text_view_number_margin_horizontal">8dp</dimen>
+
     <dimen name="fragment_margin">16dp</dimen>
     <dimen name="fragment_padding">16dp</dimen>
+    <dimen name="item_margin_vertical">16dp</dimen>
 
     <!-- view -->
     <dimen name="button_width_stroke">2dp</dimen>

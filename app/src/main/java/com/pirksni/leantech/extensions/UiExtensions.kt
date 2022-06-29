@@ -1,6 +1,9 @@
 package com.pirksni.leantech.extensions
 
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
 
@@ -29,4 +32,9 @@ fun TextInputLayout.textChangeListener(onTextChange: (String) -> Unit) {
     this.editText?.doOnTextChanged { text, _, _, _ ->
         onTextChange(text.toString())
     }
+}
+
+fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
+    val inflater = LayoutInflater.from(this.context)
+    return inflater.inflate(layoutRes, this, false)
 }
