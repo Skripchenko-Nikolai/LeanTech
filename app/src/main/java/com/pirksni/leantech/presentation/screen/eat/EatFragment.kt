@@ -8,6 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pirksni.leantech.R
 import com.pirksni.leantech.databinding.FragmentEatBinding
 import com.pirksni.leantech.extensions.launchWhenStarted
+import com.pirksni.leantech.extensions.showSnackbars
 import com.pirksni.leantech.extensions.unsafeLazy
 import com.pirksni.leantech.presentation.adapter.person.PersonAdapter
 import com.pirksni.leantech.presentation.base.BaseFragment
@@ -27,9 +28,7 @@ class EatFragment : BaseFragment<EatViewModel>(R.layout.fragment_eat) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(binding) {
-            rvPerson.adapter = personAdapter
-        }
+        binding.rvPerson.adapter = personAdapter
         with(viewModel) {
             onEvent(EatState.Event.OnGetPersonSpreadSheet)
             stateFlow.onEach(personAdapter::submitList).launchWhenStarted(lifecycleScope)
@@ -40,15 +39,35 @@ class EatFragment : BaseFragment<EatViewModel>(R.layout.fragment_eat) {
     private fun handleUiLabel(uiLabel: EatState.UiLabel) {
         when (uiLabel) {
             EatState.UiLabel.HideProgressBar ->
-                binding.flProgress.isVisible = false
+                hideProgressBar()
             EatState.UiLabel.ShowProgressBar ->
-                binding.flProgress.isVisible = true
+                showProgressBar()
             EatState.UiLabel.StartPersonScreen -> {
                 // TODO сделать экран заполнения еды
             }
             EatState.UiLabel.None -> {
                 // ignore
             }
+            is EatState.UiLabel.ErrorInternet -> {
+                hideProgressBar()
+                if (uiLabel.error == null) {
+                    showSnackbars(uiLabel.defaultError)
+                } else {
+                    showSnackbars(uiLabel.error)
+                }
+            }
+            EatState.UiLabel.NoInternetConnection -> {
+                hideProgressBar()
+                showSnackbars(R.string.no_internet_connection)
+            }
         }
+    }
+
+    private fun showProgressBar() {
+        binding.flProgress.isVisible = true
+    }
+
+    private fun hideProgressBar() {
+        binding.flProgress.isVisible = false
     }
 }

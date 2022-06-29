@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import com.pirksni.leantech.data.preferences.ProfileSharedPreferences
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 
@@ -15,6 +16,9 @@ class PreferencesModule {
         PreferenceManager.getDefaultSharedPreferences(context)
 
     @Provides
-    fun provideProfilePreferences(preference: SharedPreferences): ProfileSharedPreferences =
-        ProfileSharedPreferences(preference)
+    fun provideProfilePreferences(
+        preference: SharedPreferences,
+        moshi: Moshi
+    ): ProfileSharedPreferences =
+        ProfileSharedPreferences(preference, moshi)
 }

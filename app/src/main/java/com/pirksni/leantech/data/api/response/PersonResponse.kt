@@ -1,9 +1,9 @@
 package com.pirksni.leantech.data.api.response
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class PersonResponse(
-    @SerializedName("range") val range: String,
-    @SerializedName("majorDimension") val majorDimension: String,
-    @SerializedName("values") val persons: List<List<String>>,
+    @field:Json(name = "range") val range: String,
+    @field:Json(name = "majorDimension") val majorDimension: String,
+    @field:Json(name = "values") val persons: List<List<String>>,
 )
