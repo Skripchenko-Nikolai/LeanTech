@@ -29,7 +29,8 @@
     <string name="no_number">Номер отсутствует</string>
     <string name="no_telegram">Телеграм отсутствует</string>
 
-    <!-- fragment_eat -->
+    <!-- fragment_person_eat -->
+    <string name="enter_count_eat">Введите количество</string>
 
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>
