@@ -1,6 +1,5 @@
 package com.pirksni.leantech.presentation.screen.registration
 
-import android.util.Log
 import com.pirksni.leantech.presentation.base.BaseViewModel
 import com.pirksni.leantech.presentation.interactor.ProfileInteractor
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,7 +27,6 @@ class RegistrationViewModel @Inject constructor(
 
     private fun checkSavedProfile() {
         val profileModel = profileInteractor.getProfile()
-        Log.e("qwe", "$profileModel")
         if (profileModel == null) {
             profileInteractor.saveEmail(model.email)
             _uiLabelFlow.value = RegistrationState.UiLabel.OnStartFilledProfileScreen

@@ -1,15 +1,13 @@
 package com.pirksni.leantech.data.preferences
 
 import android.content.SharedPreferences
-import com.google.android.datatransport.cct.internal.LogResponse.fromJson
-import com.google.gson.Gson
 import com.pirksni.leantech.domain.model.ProfileModel
 import com.squareup.moshi.Moshi
 import javax.inject.Inject
 
 class ProfileSharedPreferences @Inject constructor(
     private val preferences: SharedPreferences,
-    private val moshi: Moshi,
+    moshi: Moshi,
 ) {
     private val jsonAdapter = moshi.adapter(ProfileModel::class.java)
 
