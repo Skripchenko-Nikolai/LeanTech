@@ -24,6 +24,8 @@ import javax.inject.Singleton
         InteractorModule::class,
         NetworkModule::class,
         ApiModule::class,
+        MoshiModule::class,
+        CoroutinesModule::class,
     ]
 )
 @Singleton

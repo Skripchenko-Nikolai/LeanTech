@@ -1,5 +1,6 @@
 package com.pirksni.leantech.presentation.screen.eat
 
+import com.pirksni.leantech.R
 import com.pirksni.leantech.domain.model.PersonModel
 
 interface EatState {
@@ -13,6 +14,11 @@ interface EatState {
         object ShowProgressBar : UiLabel()
         object HideProgressBar : UiLabel()
         object StartPersonScreen : UiLabel()
+        object NoInternetConnection : UiLabel()
+        data class ErrorInternet(
+            val error: String? = null,
+            val defaultError: Int = R.string.unknown_error
+        ) : UiLabel()
         object None : UiLabel()
     }
 }

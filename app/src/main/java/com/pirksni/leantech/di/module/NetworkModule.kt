@@ -4,12 +4,13 @@ import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.pirksni.leantech.BuildConfig
 import com.pirksni.leantech.data.api.LeanTechServiceApi
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -33,7 +34,7 @@ class NetworkModule {
     @Singleton
     fun provideApiService(client: OkHttpClient): LeanTechServiceApi =
         Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl(URL)
             .client(client)
             .build()

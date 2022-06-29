@@ -113,9 +113,12 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttp_version"
+
+    //Moshi
+    implementation 'com.squareup.moshi:moshi:1.8.0'
 
     // Chucker
     debugImplementation "com.github.chuckerteam.chucker:library:$chucker"
