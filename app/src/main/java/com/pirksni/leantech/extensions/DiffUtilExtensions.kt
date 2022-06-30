@@ -12,6 +12,7 @@ fun <T> itemCallback(
         null
     }
 ) = object : DiffUtil.ItemCallback<T>() {
+
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean = areItemsTheSame(oldItem, newItem)
 
     @SuppressLint("DiffUtilEquals")

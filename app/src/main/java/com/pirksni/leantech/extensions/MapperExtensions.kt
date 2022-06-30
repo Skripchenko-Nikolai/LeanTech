@@ -1,9 +1,7 @@
 package com.pirksni.leantech.extensions
 
-import android.util.Log
 import com.pirksni.leantech.data.api.response.PersonEatResponse
 import com.pirksni.leantech.data.api.response.PersonResponse
-import com.pirksni.leantech.domain.model.PersonEatModel
 import com.pirksni.leantech.domain.model.PersonModel
 import com.pirksni.leantech.domain.model.ProfileModel
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileState
@@ -27,11 +25,5 @@ fun PersonResponse.mapToPersonModel(): List<PersonModel> =
         )
     }
 
-fun PersonEatResponse.mapToPersonEatModel(): List<PersonEatModel> =
-    this.personEat.map { listEats ->
-        listEats.map {
-            PersonEatModel(
-                eat = it
-            )
-        }
-    }.first()
+fun PersonEatResponse.mapToPersonEatModel(): List<String> =
+    this.personEat.flatten()

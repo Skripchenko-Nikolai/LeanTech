@@ -16,12 +16,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_person_eat"/>
+        tools:listitem="@layout/item_person_eat" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSave"
         style="@style/OutlinedButtonDanube.2.TextDanube"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/button_save_profile_horizontal_margin"
         android:layout_marginTop="@dimen/text_input_margin_top"

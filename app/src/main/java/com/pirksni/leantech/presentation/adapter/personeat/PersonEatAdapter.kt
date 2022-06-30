@@ -5,11 +5,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.pirksni.leantech.R
 import com.pirksni.leantech.databinding.ItemPersonEatBinding
-import com.pirksni.leantech.domain.model.PersonEatModel
 import com.pirksni.leantech.extensions.inflate
 import com.pirksni.leantech.extensions.itemCallback
 
-class PersonEatAdapter : ListAdapter<PersonEatModel, PersonEatHolder>(chekDiffUtil()) {
+class PersonEatAdapter : ListAdapter<String, PersonEatHolder>(chekDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonEatHolder =
         PersonEatHolder(ItemPersonEatBinding.bind(parent.inflate(R.layout.item_person_eat)))
@@ -19,9 +18,9 @@ class PersonEatAdapter : ListAdapter<PersonEatModel, PersonEatHolder>(chekDiffUt
     }
 }
 
-private fun chekDiffUtil(): DiffUtil.ItemCallback<PersonEatModel> =
+private fun chekDiffUtil(): DiffUtil.ItemCallback<String> =
     itemCallback(
         areItemsTheSame = { new, old ->
-            new.eat == old.eat
+            new == old
         }
     )

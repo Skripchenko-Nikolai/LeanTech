@@ -1,7 +1,6 @@
 package com.pirksni.leantech.data.repository
 
 import com.pirksni.leantech.data.api.api.PersonApi
-import com.pirksni.leantech.domain.model.PersonEatModel
 import com.pirksni.leantech.domain.model.PersonModel
 import com.pirksni.leantech.domain.repository.PersonNetworkRepository
 import com.pirksni.leantech.extensions.mapToPersonEatModel
@@ -25,7 +24,7 @@ class PersonNetworkRepositoryImpl @Inject constructor(
         }
 
 
-    override suspend fun getPersonEat(): ResultWrapper<List<PersonEatModel>> =
+    override suspend fun getPersonEat(): ResultWrapper<List<String>> =
         safeApiCall(dispatcher, moshi) {
             personApi.getPersonEat().mapToPersonEatModel()
         }

@@ -1,7 +1,6 @@
 package com.pirksni.leantech.presentation.screen.registration
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope

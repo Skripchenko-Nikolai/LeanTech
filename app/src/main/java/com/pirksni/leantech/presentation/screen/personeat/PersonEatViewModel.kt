@@ -1,7 +1,6 @@
 package com.pirksni.leantech.presentation.screen.personeat
 
 import androidx.lifecycle.viewModelScope
-import com.pirksni.leantech.domain.model.PersonEatModel
 import com.pirksni.leantech.presentation.base.BaseViewModel
 import com.pirksni.leantech.presentation.interactor.PersonInteractor
 import com.pirksni.leantech.presentation.util.network.ResultWrapper
@@ -16,7 +15,7 @@ class PersonEatViewModel @Inject constructor(
     private val personInteractor: PersonInteractor,
 ) : BaseViewModel() {
 
-    private val _stateFlow = MutableSharedFlow<List<PersonEatModel>>()
+    private val _stateFlow = MutableSharedFlow<List<String>>()
     val stateFlow = _stateFlow.asSharedFlow()
 
     private val _uiLabelFlow =
