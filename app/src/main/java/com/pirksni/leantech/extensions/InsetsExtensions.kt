@@ -27,7 +27,7 @@ fun View.updateTopPaddingEdgeToEdge() {
         .setOnApplyWindowInsetsListener(this) { view, windowInsetsCompat ->
             val insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars())
             view.updatePadding(
-                top = insets.top + this.paddingTop
+                top = insets.top
             )
             windowInsetsCompat
         }

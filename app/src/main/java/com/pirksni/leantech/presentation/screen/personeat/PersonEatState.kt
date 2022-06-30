@@ -1,13 +1,13 @@
-package com.pirksni.leantech.presentation.screen.eat
+package com.pirksni.leantech.presentation.screen.personeat
 
 import com.pirksni.leantech.R
 import com.pirksni.leantech.domain.model.PersonModel
 
-interface EatState {
+interface PersonEatState {
 
     sealed class Event {
-        object OnGetPersonSpreadSheet : Event()
-        data class OnPersonClick(val personModel: PersonModel) : Event()
+        object OnGetPersonEatSpreadSheet : Event()
+        data class OnEatChange(val personModel: PersonModel) : Event()
     }
 
     sealed class UiLabel {
@@ -19,5 +19,6 @@ interface EatState {
             val defaultError: Int = R.string.unknown_error
         ) : UiLabel()
         object None : UiLabel()
+        object OnExitScreen : UiLabel()
     }
 }

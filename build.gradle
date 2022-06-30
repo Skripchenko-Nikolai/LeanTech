@@ -21,12 +21,12 @@ task("checkAll") {
 
 
 ext {
-    lifecycle_version = '2.4.1'
+    lifecycle_version = '2.5.0'
     dagger_version = '2.42'
     coroutines_version = '1.6.0'
     room_version = '2.4.2'
     work_version = '2.7.1'
-    navigation_version = '2.4.2'
+    navigation_version = '2.5.0'
     retrofit_version = '2.9.0'
     okhttp_version = '4.9.1'
     chucker = '3.5.2'
