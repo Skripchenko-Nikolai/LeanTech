@@ -5,6 +5,11 @@
     </issue>
 
     <issue id="RestrictedApi" severity="ignore">
-        <ignore path="com.pirksni.sportnote.data.db.database.AppDatabase_Impl"/>
+        <ignore path="com.pirksni.sportnote.data.db.database.AppDatabase_Impl" />
+    </issue>
+
+    <issue id="TrustAllX509TrustManager" severity="ignore">
+        <ignore
+            path="/home/runner/work/LeanTech/LeanTech/app/com/google/api/client/util/SslUtils$1.class" />
     </issue>
 </lint>

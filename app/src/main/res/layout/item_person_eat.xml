@@ -2,37 +2,57 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MainItemStyle"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/item_person_eat_margin_horizontal"
+    android:layout_marginVertical="@dimen/item_person_eat_margin_vertical"
+    android:paddingVertical="@dimen/input_layout_count_padding_vertical">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvNameEat"
-        style="@style/Text.XXXLarge.Danube"
+        style="@style/Text.Large.Danube"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/text_view_name_eat_margin_horizontal"
+        android:gravity="center"
+        android:paddingBottom="@dimen/eat_text_view_padding_bottom"
+        app:layout_constraintBottom_toTopOf="@id/tvCount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Шашлык" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiCount"
-        style="@style/OutlinedTextInputDanube.2.HintDanube"
-        android:layout_width="0dp"
+    <ImageView
+        android:id="@+id/ivRemove"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/input_layout_count_margin_horizontal"
-        android:layout_marginTop="@dimen/input_layout_count_margin_top"
-        android:hint="@string/enter_count_eat"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_remove"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvCount"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNameEat">
+        app:layout_constraintTop_toBottomOf="@id/tvNameEat" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etName"
-            style="@style/Text.Large"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvCount"
+        style="@style/Text.XXXLarge.Danube"
+        android:layout_width="@dimen/count_text_view_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLength="2"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivAdd"
+        app:layout_constraintStart_toEndOf="@id/ivRemove"
+        app:layout_constraintTop_toBottomOf="@id/tvNameEat" />
+
+    <ImageView
+        android:id="@+id/ivAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCount"
+        app:layout_constraintTop_toBottomOf="@id/tvNameEat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

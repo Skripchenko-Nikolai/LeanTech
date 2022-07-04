@@ -1,31 +1,38 @@
 package com.pirksni.leantech.data.repository
 
-import com.pirksni.leantech.data.api.api.PersonApi
+import com.pirksni.leantech.data.google.GetValueSheet
+import com.pirksni.leantech.data.google.UpdateValuesSheet
+import com.pirksni.leantech.data.google.response.EatResponse
 import com.pirksni.leantech.domain.model.PersonModel
 import com.pirksni.leantech.domain.repository.PersonNetworkRepository
 import com.pirksni.leantech.extensions.mapToPersonEatModel
 import com.pirksni.leantech.extensions.mapToPersonModel
-import com.pirksni.leantech.presentation.util.network.ResultWrapper
-import com.pirksni.leantech.presentation.util.network.safeApiCall
-import com.squareup.moshi.Moshi
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 class PersonNetworkRepositoryImpl @Inject constructor(
-    private val personApi: PersonApi,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-    private val moshi: Moshi,
+    private val getValueSheet: GetValueSheet,
+    private val updateValuesSheet: UpdateValuesSheet,
 ) : PersonNetworkRepository {
 
-    override suspend fun getPersons(): ResultWrapper<List<PersonModel>> =
-        safeApiCall(dispatcher, moshi) {
-            personApi.getPerson().mapToPersonModel()
-        }
+    override suspend fun getPersons(): List<PersonModel>? =
+        getValueSheet.getValues(SHEET_ID, RANGE_PERSON)?.mapToPersonModel()
 
+    override suspend fun getEats(): List<String>? =
+        getValueSheet.getValues(SHEET_ID, RANGE_EAT)?.mapToPersonEatModel()
 
-    override suspend fun getPersonEat(): ResultWrapper<List<String>> =
-        safeApiCall(dispatcher, moshi) {
-            personApi.getPersonEat().mapToPersonEatModel()
-        }
+    override suspend fun updateEat(
+        range: String,
+        values: List<List<Any?>?>?,
+    ): EatResponse? =
+        updateValuesSheet.updateValues(
+            spreadsheetId = SHEET_ID,
+            range = range,
+            values = values
+        )
+
+    companion object {
+        private const val SHEET_ID = "1VZTN0nFodYskOvJeE9-SNBefZKnX1CICPyWtQwWCuNo"
+        private const val RANGE_PERSON = "A2:B100"
+        private const val RANGE_EAT = "C1:Z1"
+    }
 }

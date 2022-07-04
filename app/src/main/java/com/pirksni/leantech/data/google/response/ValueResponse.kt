@@ -1,9 +1,9 @@
-package com.pirksni.leantech.data.api.response
+package com.pirksni.leantech.data.google.response
 
 import com.squareup.moshi.Json
 
-data class PersonResponse(
+data class ValueResponse(
     @field:Json(name = "range") val range: String,
     @field:Json(name = "majorDimension") val majorDimension: String,
-    @field:Json(name = "values") val persons: List<List<String>>,
+    @field:Json(name = "values") val value: List<List<String>>,
 )
