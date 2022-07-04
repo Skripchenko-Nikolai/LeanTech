@@ -12,4 +12,7 @@ class PersonInteractorImpl @Inject constructor(
 
     override suspend fun getPerson(): ResultWrapper<List<PersonModel>> =
         personNetworkRepository.getPersons()
+
+    override suspend fun getPersonEat(): ResultWrapper<List<String>> =
+        personNetworkRepository.getPersonEat()
 }

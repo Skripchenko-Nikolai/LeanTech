@@ -15,5 +15,15 @@
         android:id="@+id/eatFragment"
         android:name="com.pirksni.leantech.presentation.screen.eat.EatFragment"
         android:label="EatFragment"
-        tools:layout="@layout/fragment_eat" />
+        tools:layout="@layout/fragment_eat">
+        <action
+            android:id="@+id/eat_fragment_to_person_eat_fragment"
+            app:destination="@id/personEatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personEatFragment"
+        android:name="com.pirksni.leantech.presentation.screen.personeat.PersonEatFragment"
+        android:label="PersonEatFragment"
+        tools:layout="@layout/fragment_person_eat" />
 </navigation>

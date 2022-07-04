@@ -1,4 +1,4 @@
-package com.pirksni.leantech.presentation.screen.eat
+package com.pirksni.leantech.presentation.screen.personeat
 
 import android.os.Bundle
 import android.view.View
@@ -7,46 +7,47 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pirksni.leantech.R
-import com.pirksni.leantech.databinding.FragmentEatBinding
+import com.pirksni.leantech.databinding.FragmentPersonEatBinding
 import com.pirksni.leantech.extensions.launchWhenStarted
 import com.pirksni.leantech.extensions.showSnackbars
-import com.pirksni.leantech.extensions.unsafeLazy
-import com.pirksni.leantech.presentation.adapter.person.PersonAdapter
+import com.pirksni.leantech.extensions.updateTopPaddingEdgeToEdge
+import com.pirksni.leantech.presentation.adapter.personeat.PersonEatAdapter
 import com.pirksni.leantech.presentation.base.BaseFragment
 import kotlinx.coroutines.flow.onEach
 
-class EatFragment : BaseFragment<EatViewModel>(R.layout.fragment_eat) {
+class PersonEatFragment : BaseFragment<PersonEatViewModel>(R.layout.fragment_person_eat) {
 
-    private val binding by viewBinding(FragmentEatBinding::bind)
+    private val binding by viewBinding(FragmentPersonEatBinding::bind)
 
-    private val personAdapter by unsafeLazy {
-        PersonAdapter(
-            onItemClick = {
-                findNavController().navigate(R.id.eat_fragment_to_person_eat_fragment)
-            }
-        )
+    private val personEatAdapter by lazy {
+        PersonEatAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvPerson.adapter = personAdapter
+        binding.rvPersonEat.updateTopPaddingEdgeToEdge()
+        binding.rvPersonEat.adapter = personEatAdapter
         with(viewModel) {
-            onEvent(EatState.Event.OnGetPersonSpreadSheet)
-            stateFlow.onEach(personAdapter::submitList).launchWhenStarted(lifecycleScope)
+            onEvent(PersonEatState.Event.OnGetPersonEatSpreadSheet)
             uiLabelFlow.onEach(::handleUiLabel).launchWhenStarted(lifecycleScope)
+            stateFlow.onEach(personEatAdapter::submitList).launchWhenStarted(lifecycleScope)
         }
     }
 
-    private fun handleUiLabel(uiLabel: EatState.UiLabel) {
+
+    private fun handleUiLabel(uiLabel: PersonEatState.UiLabel) {
         when (uiLabel) {
-            EatState.UiLabel.HideProgressBar ->
+            PersonEatState.UiLabel.HideProgressBar ->
                 hideProgressBar()
-            EatState.UiLabel.ShowProgressBar ->
+            PersonEatState.UiLabel.ShowProgressBar ->
                 showProgressBar()
-            EatState.UiLabel.None -> {
+            PersonEatState.UiLabel.OnExitScreen -> {
+                findNavController().navigateUp()
+            }
+            PersonEatState.UiLabel.None -> {
                 // ignore
             }
-            is EatState.UiLabel.ErrorInternet -> {
+            is PersonEatState.UiLabel.ErrorInternet -> {
                 hideProgressBar()
                 if (uiLabel.error == null) {
                     showSnackbars(uiLabel.defaultError)
@@ -54,7 +55,7 @@ class EatFragment : BaseFragment<EatViewModel>(R.layout.fragment_eat) {
                     showSnackbars(uiLabel.error)
                 }
             }
-            EatState.UiLabel.NoInternetConnection -> {
+            PersonEatState.UiLabel.NoInternetConnection -> {
                 hideProgressBar()
                 showSnackbars(R.string.no_internet_connection)
             }

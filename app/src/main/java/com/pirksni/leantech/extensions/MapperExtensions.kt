@@ -1,5 +1,6 @@
 package com.pirksni.leantech.extensions
 
+import com.pirksni.leantech.data.api.response.PersonEatResponse
 import com.pirksni.leantech.data.api.response.PersonResponse
 import com.pirksni.leantech.domain.model.PersonModel
 import com.pirksni.leantech.domain.model.ProfileModel
@@ -23,3 +24,6 @@ fun PersonResponse.mapToPersonModel(): List<PersonModel> =
             fullName = it[1]
         )
     }
+
+fun PersonEatResponse.mapToPersonEatModel(): List<String> =
+    this.personEat.flatten()
