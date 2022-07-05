@@ -1,7 +1,6 @@
 package com.pirksni.leantech.extensions
 
-import com.pirksni.leantech.data.api.response.PersonEatResponse
-import com.pirksni.leantech.data.api.response.PersonResponse
+import com.pirksni.leantech.data.google.response.ValueResponse
 import com.pirksni.leantech.domain.model.PersonModel
 import com.pirksni.leantech.domain.model.ProfileModel
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileState
@@ -17,13 +16,13 @@ fun FilledProfileState.Model.mapToProfileModel(): ProfileModel =
         telegramNickname = this.nicknameTelegram
     )
 
-fun PersonResponse.mapToPersonModel(): List<PersonModel> =
-    this.persons.filter { it.size > 1 }.map {
+fun ValueResponse.mapToPersonModel(): List<PersonModel> =
+    this.value.filter { it.size > 1 }.map {
         PersonModel(
             number = it[0],
             fullName = it[1]
         )
     }
 
-fun PersonEatResponse.mapToPersonEatModel(): List<String> =
-    this.personEat.flatten()
+fun ValueResponse.mapToPersonEatModel(): List<String> =
+    this.value.flatten()

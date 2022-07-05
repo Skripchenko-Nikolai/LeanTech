@@ -22,6 +22,10 @@
         <item name="backgroundTint">@color/danube</item>
     </style>
 
+    <style name="MainItemStyle">
+        <item name="android:background">@drawable/background_rectangle_danube37_radius_3</item>
+    </style>
+
     <style name="ProgressBarStyle">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>

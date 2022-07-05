@@ -25,5 +25,9 @@
         android:id="@+id/personEatFragment"
         android:name="com.pirksni.leantech.presentation.screen.personeat.PersonEatFragment"
         android:label="PersonEatFragment"
-        tools:layout="@layout/fragment_person_eat" />
+        tools:layout="@layout/fragment_person_eat">
+        <argument
+            android:name="positionPerson"
+            app:argType="string" />
+    </fragment>
 </navigation>

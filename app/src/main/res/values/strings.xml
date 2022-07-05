@@ -30,7 +30,11 @@
     <string name="no_telegram">Телеграм отсутствует</string>
 
     <!-- fragment_person_eat -->
-    <string name="enter_count_eat">Введите количество</string>
+    <string name="comment">комментарии</string>
+    <string name="enter_comment">Напишите комментарий</string>
+
+    <!-- item_person_eat -->
+    <string name="zero">0</string>
 
     <!-- menu_bottom_navigation -->
     <string name="chat">Чат</string>

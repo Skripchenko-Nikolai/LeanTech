@@ -1,35 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPersonEat"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/fragment_person_eat_recycler_view_margin"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/btnSave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_person_eat" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSave"
-        style="@style/OutlinedButtonDanube.2.TextDanube"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/button_save_profile_horizontal_margin"
-        android:layout_marginTop="@dimen/text_input_margin_top"
-        android:paddingVertical="@dimen/button_save_profile_padding_vertical"
-        android:text="@string/save_data_profile"
+        android:layout_marginTop="@dimen/fragment_person_eat_scroll_view_margin"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/eatContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/llComment"
+                style="@style/MainItemStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/item_person_eat_margin_horizontal"
+                android:layout_marginVertical="@dimen/item_person_eat_margin_vertical"
+                android:paddingVertical="@dimen/input_layout_count_padding_vertical"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvComment"
+                    style="@style/Text.Large.Danube"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/eat_text_view_padding_bottom"
+                    android:text="@string/comment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiCount"
+                    style="@style/OutlinedTextInputDanube.2.HintDanube"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/input_layout_count_margin_horizontal"
+                    android:layout_marginTop="@dimen/input_layout_count_margin_top"
+                    android:hint="@string/enter_comment"
+                    android:paddingBottom="@dimen/input_layout_count_padding_bottom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCount"
+                        style="@style/Text.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                style="@style/OutlinedButtonDanube.2.TextDanube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/button_save_profile_horizontal_margin"
+                android:layout_marginTop="@dimen/text_input_margin_top"
+                android:paddingVertical="@dimen/button_save_profile_padding_vertical"
+                android:text="@string/save_data_profile"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/flProgress"

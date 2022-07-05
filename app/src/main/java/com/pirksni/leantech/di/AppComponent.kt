@@ -2,7 +2,17 @@ package com.pirksni.leantech.di
 
 import android.content.Context
 import com.pirksni.leantech.LeanTechApplication
-import com.pirksni.leantech.di.module.*
+import com.pirksni.leantech.di.module.ActivityModule
+import com.pirksni.leantech.di.module.FirebaseModule
+import com.pirksni.leantech.di.module.FragmentModule
+import com.pirksni.leantech.di.module.ViewModelModule
+import com.pirksni.leantech.di.module.PreferencesModule
+import com.pirksni.leantech.di.module.RepositoryNetworkModule
+import com.pirksni.leantech.di.module.RepositoryPreferencesModule
+import com.pirksni.leantech.di.module.InteractorModule
+import com.pirksni.leantech.di.module.MoshiModule
+import com.pirksni.leantech.di.module.CoroutinesModule
+import com.pirksni.leantech.di.module.GoogleSheetModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -22,10 +32,9 @@ import javax.inject.Singleton
         RepositoryPreferencesModule::class,
         RepositoryNetworkModule::class,
         InteractorModule::class,
-        NetworkModule::class,
-        ApiModule::class,
         MoshiModule::class,
         CoroutinesModule::class,
+        GoogleSheetModule::class,
     ]
 )
 @Singleton

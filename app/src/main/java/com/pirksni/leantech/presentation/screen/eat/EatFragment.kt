@@ -22,7 +22,8 @@ class EatFragment : BaseFragment<EatViewModel>(R.layout.fragment_eat) {
     private val personAdapter by unsafeLazy {
         PersonAdapter(
             onItemClick = {
-                findNavController().navigate(R.id.eat_fragment_to_person_eat_fragment)
+                val action = EatFragmentDirections.eatFragmentToPersonEatFragment(it.number)
+                findNavController().navigate(action)
             }
         )
     }
