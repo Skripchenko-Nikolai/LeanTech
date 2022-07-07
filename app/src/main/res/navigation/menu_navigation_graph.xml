@@ -26,4 +26,10 @@
         android:name="com.pirksni.leantech.presentation.screen.personeat.PersonEatFragment"
         android:label="PersonEatFragment"
         tools:layout="@layout/fragment_person_eat" />
+
+    <fragment
+        android:id="@+id/officeMapFragment"
+        android:name="com.pirksni.leantech.presentation.screen.officemap.OfficeMapFragment"
+        android:label="OfficeMapFragment"
+        tools:layout="@layout/fragment_office_map" />
 </navigation>

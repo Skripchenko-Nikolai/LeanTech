@@ -28,6 +28,10 @@
         <item name="android:background">@color/gray_alfa_30</item>
     </style>
 
+    <style name="OfficeMapFragmentStyle">
+        <item name="android:background">@color/white</item>
+    </style>
+
     <style name="RegistrationFragmentStyle">
         <item name="android:background">@drawable/background_gradient_black_danube</item>
     </style>

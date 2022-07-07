@@ -6,6 +6,7 @@ import com.pirksni.leantech.presentation.screen.eat.EatViewModel
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileViewModel
 import com.pirksni.leantech.presentation.screen.main.MainViewModel
 import com.pirksni.leantech.presentation.screen.menu.MenuViewModel
+import com.pirksni.leantech.presentation.screen.officemap.OfficeMapViewModel
 import com.pirksni.leantech.presentation.screen.personeat.PersonEatViewModel
 import com.pirksni.leantech.presentation.screen.profile.ProfileViewModel
 import com.pirksni.leantech.presentation.screen.registration.RegistrationViewModel
@@ -50,4 +51,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(PersonEatViewModel::class)
     abstract fun bindPersonEatViewModel(viewModel: PersonEatViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(OfficeMapViewModel::class)
+    abstract fun bindOfficeMapViewModel(viewModel: OfficeMapViewModel): ViewModel
 }
