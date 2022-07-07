@@ -24,7 +24,6 @@ class MenuFragment : BaseFragment<MenuViewModel>(R.layout.fragment_menu) {
 
 
     private fun initBottomNavigationView() {
-
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.menuContainer) as NavHostFragment
         val navController = navHostFragment.navController

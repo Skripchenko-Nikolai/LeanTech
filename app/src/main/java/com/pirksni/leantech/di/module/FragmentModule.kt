@@ -3,6 +3,7 @@ package com.pirksni.leantech.di.module
 import com.pirksni.leantech.presentation.screen.eat.EatFragment
 import com.pirksni.leantech.presentation.screen.filledprofile.FilledProfileFragment
 import com.pirksni.leantech.presentation.screen.menu.MenuFragment
+import com.pirksni.leantech.presentation.screen.officemap.OfficeMapFragment
 import com.pirksni.leantech.presentation.screen.personeat.PersonEatFragment
 import com.pirksni.leantech.presentation.screen.profile.ProfileFragment
 import com.pirksni.leantech.presentation.screen.registration.RegistrationFragment
@@ -29,4 +30,7 @@ interface FragmentModule {
 
     @ContributesAndroidInjector
     fun providePersonEatFragment(): PersonEatFragment
+
+    @ContributesAndroidInjector
+    fun provideOfficeMapFragment(): OfficeMapFragment
 }

@@ -33,7 +33,7 @@
     <string name="enter_count_eat">Введите количество</string>
 
     <!-- menu_bottom_navigation -->
-    <string name="chat">Чат</string>
+    <string name="map">Карта</string>
     <string name="profile">Профиль</string>
     <string name="eat">Еда</string>
 
