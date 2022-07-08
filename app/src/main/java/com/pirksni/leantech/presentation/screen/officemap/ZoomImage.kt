@@ -14,24 +14,26 @@ import androidx.appcompat.widget.AppCompatImageView
 class ZoomImage : AppCompatImageView, View.OnTouchListener,
     GestureDetector.OnGestureListener {
 
+    var coordinate: Pair<Float, Float>? = null
+
     // Shared constructing
     private var mContext: Context? = null
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mGestureDetector: GestureDetector? = null
-    var mMatrix: Matrix? = null
+    private var mMatrix: Matrix? = null
     private var mMatrixValues: FloatArray? = null
-    var mode = IMAGE_STATE_NONE
+    private var mode = IMAGE_STATE_NONE
 
     // Scales
-    var mSaveScale = SAVE_SCALE_VALUE
-    var mMinScale = MIN_SCALE_VALUE
-    var mMaxScale = MAX_SCALE_VALUE
+    private var mSaveScale = SAVE_SCALE_VALUE
+    private var mMinScale = MIN_SCALE_VALUE
+    private var mMaxScale = MAX_SCALE_VALUE
 
     // View dimensions
-    var origWidth = ZERO_VALUE
-    var origHeight = ZERO_VALUE
-    var viewWidth = 0
-    var viewHeight = 0
+    private var origWidth = ZERO_VALUE
+    private var origHeight = ZERO_VALUE
+    private var viewWidth = 0
+    private var viewHeight = 0
     private var mLast = PointF()
     private var mStart = PointF()
 
@@ -62,6 +64,7 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
     }
 
     private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+
         override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
             mode = IMAGE_STATE_ZOOM
             return true
@@ -205,7 +208,11 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
         // ignore
     }
 
-    override fun onSingleTapUp(motionEvent: MotionEvent): Boolean = FALSE_VALUE_EVENT
+    override fun onSingleTapUp(motionEvent: MotionEvent): Boolean {
+        coordinate = Pair(motionEvent.x, motionEvent.y)
+        // get value click motionEvent.x, motionEvent.y and save firebase name, second name and value coordinate
+        return FALSE_VALUE_EVENT
+    }
 
 
     override fun onScroll(
@@ -217,7 +224,7 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
 
 
     override fun onLongPress(motionEvent: MotionEvent) {
-        // ignore
+        fitToScreen()
     }
 
     override fun onFling(
