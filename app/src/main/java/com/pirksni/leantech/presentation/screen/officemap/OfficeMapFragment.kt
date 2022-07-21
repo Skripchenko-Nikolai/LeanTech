@@ -2,6 +2,7 @@ package com.pirksni.leantech.presentation.screen.officemap
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -12,7 +13,9 @@ import com.pirksni.leantech.extensions.launchWhenStarted
 import com.pirksni.leantech.extensions.showSnackbars
 import com.pirksni.leantech.presentation.base.BaseFragment
 import com.pirksni.leantech.presentation.util.alertDialogBuilder
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 class OfficeMapFragment : BaseFragment<OfficeMapViewModel>(R.layout.fragment_office_map) {
 
@@ -26,6 +29,9 @@ class OfficeMapFragment : BaseFragment<OfficeMapViewModel>(R.layout.fragment_off
             }
         }
         with(viewModel) {
+            stateFlow.onEach {
+
+            }
             viewModel.onEvent(OfficeMapState.Event.OnGetPoint)
             stateFlow.onEach(::handleUiState).launchWhenStarted(lifecycleScope)
             uiLabelFlow.onEach(::handleUiLabel).launchWhenStarted(lifecycleScope)
@@ -99,6 +105,5 @@ class OfficeMapFragment : BaseFragment<OfficeMapViewModel>(R.layout.fragment_off
     }
 
     private fun placeImage(pointModel: PointModel) {
-
     }
 }

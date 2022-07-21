@@ -4,6 +4,8 @@ import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.pirksni.leantech.domain.model.PointModel
 import com.pirksni.leantech.extensions.mapToPointModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
 class FirebasePointMap @Inject constructor(
@@ -25,6 +27,22 @@ class FirebasePointMap @Inject constructor(
 
     private val values = mutableListOf<PointModel>()
     private var status = true
+
+    fun getPointsNew() : Flow<List<PointModel>> {
+        return callbackFlow<List<PointModel>> {
+            fireStoreFirebase.collection(COLLECTION_POINT_ON_MAP_PERSON)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    querySnapshot.onEach { document ->
+                        values.add(document.data.values.toList().mapToPointModel())
+                    }
+                    trySend(values)
+                }
+                .addOnFailureListener {
+                    error("Error")
+                }
+        }
+    }
 
     fun getPoints(): List<PointModel> {
         addPoints()

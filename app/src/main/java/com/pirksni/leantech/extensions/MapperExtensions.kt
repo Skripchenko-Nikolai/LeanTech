@@ -58,7 +58,7 @@ fun List<Any>.mapToPointModel() =
     PointModel(
         coordinateX = this[0] as Double,
         coordinateY = this[1] as Double,
-        email = this[3] as String,
         name = this[2] as String,
+        email = this[3] as String,
         secondName = this[4] as String
     )

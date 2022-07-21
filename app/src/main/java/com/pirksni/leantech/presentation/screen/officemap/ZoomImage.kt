@@ -1,13 +1,12 @@
 package com.pirksni.leantech.presentation.screen.officemap
 
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Matrix
 import android.graphics.PointF
 import android.util.AttributeSet
-import android.view.View
-import android.view.GestureDetector
-import android.view.ScaleGestureDetector
-import android.view.MotionEvent
+import android.util.Log
+import android.view.*
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
 
@@ -100,6 +99,10 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
     }
 
     private fun fitToScreen() {
+//        Log.e("qwe", "${mMatrixValues!![Matrix.MTRANS_X]}")
+//        Log.e("qwe", "${mMatrixValues!![Matrix.MTRANS_Y]}")
+//        Log.e("qwe", "${mMatrixValues!![Matrix.MSCALE_X]}")
+//        Log.e("qwe", "${mMatrixValues!![Matrix.MSCALE_Y]}")
         mSaveScale = 1f
         val scale: Float
         val drawable = drawable
@@ -130,8 +133,12 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
             mMatrixValues!![Matrix.MTRANS_X] //get the most recent translation in x direction
         val transY =
             mMatrixValues!![Matrix.MTRANS_Y] //get the most recent translation in y direction
+//        Log.e("transX", "$transX")
+//        Log.e("transY", "$transY")
         val fixTransX = getFixTranslation(transX, viewWidth.toFloat(), origWidth * mSaveScale)
         val fixTransY = getFixTranslation(transY, viewHeight.toFloat(), origHeight * mSaveScale)
+//        Log.e("fixTransX", "$fixTransX")
+//        Log.e("fixTransY", "$fixTransY")
         if (fixTransX != ZERO_VALUE || fixTransY != ZERO_VALUE) {
             mMatrix!!.postTranslate(fixTransX, fixTransY)
         } else {
@@ -209,6 +216,15 @@ class ZoomImage : AppCompatImageView, View.OnTouchListener,
     }
 
     override fun onSingleTapUp(motionEvent: MotionEvent): Boolean {
+        Log.e("qwe MTRANS_X", "${mMatrixValues!![Matrix.MTRANS_X]}") // маштабирование
+        Log.e("qwe MTRANS_Y", "${mMatrixValues!![Matrix.MTRANS_Y]}")
+        Log.e("qwe MSCALE_X", "${mMatrixValues!![Matrix.MSCALE_X]}") // приближение
+        Log.e("qwe MSCALE_Y", "${mMatrixValues!![Matrix.MSCALE_Y]}")
+        Log.e("qwe viewWidth image", "$viewWidth") // размеры картинки
+        Log.e("qwe viewHeight image", "$viewHeight")
+        Log.e("qwe system width", "${Resources.getSystem().displayMetrics.widthPixels}") // размеры экрана
+        Log.e("qwe system height", "${Resources.getSystem().displayMetrics.heightPixels}")
+        Log.e("qwe x and y", "${motionEvent.x} and ${motionEvent.y}")
         coordinate = Pair(motionEvent.x, motionEvent.y)
         // get value click motionEvent.x, motionEvent.y and save firebase name, second name and value coordinate
         return FALSE_VALUE_EVENT
