@@ -32,8 +32,20 @@
     <!-- fragment_person_eat -->
     <string name="enter_count_eat">Введите количество</string>
 
+    <!-- fragment_office_map -->
+    <string name="error_get_point">Не удалось получить поинты</string>
+    <string name="error_save_point">Не удалось сохранить поинт</string>
+    <string name="error_get_profile_info">Не удалось получить имя для сохранения</string>
+    <string name="error_empty_coordinates">Нет координат</string>
+
+    <!-- alert_dialog -->
+    <string name="dialog_attention">Внимание</string>
+    <string name="dialog_yes">ДА</string>
+    <string name="dialog_back">НАЗАД</string>
+    <string name="dialog_message_save_point">Вы уверены что хотите сохранить поинт</string>
+
     <!-- menu_bottom_navigation -->
-    <string name="chat">Чат</string>
+    <string name="map">Карта</string>
     <string name="profile">Профиль</string>
     <string name="eat">Еда</string>
 

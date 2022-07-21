@@ -28,6 +28,19 @@
         <item name="android:background">@color/gray_alfa_30</item>
     </style>
 
+    <style name="Theme.LeanTech.Dialog.Alert" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/Theme.LeanTech.Dialog.Alert.Title</item>
+    </style>
+
+    <style name="Theme.LeanTech.Dialog.Alert.Title" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/danube</item>
+        <item name="android:textSize">@dimen/text_x_large</item>
+    </style>
+
+    <style name="OfficeMapFragmentStyle">
+        <item name="android:background">@color/white</item>
+    </style>
+
     <style name="RegistrationFragmentStyle">
         <item name="android:background">@drawable/background_gradient_black_danube</item>
     </style>

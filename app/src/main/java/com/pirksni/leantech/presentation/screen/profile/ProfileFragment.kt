@@ -53,14 +53,13 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
 
     private fun setPhoneNumber(profileModel: ProfileModel?) {
         with(binding) {
-            if (profileModel == null) {
-                tvPhoneNumber.text = getText(R.string.no_number)
+            tvPhoneNumber.text = if (profileModel == null) {
+                getText(R.string.no_number)
             } else {
-                tvPhoneNumber.text =
-                    getString(
-                        R.string.profile_phone_number,
-                        "+${profileModel.phoneNumber}"
-                    )
+                getString(
+                    R.string.profile_phone_number,
+                    "+${profileModel.phoneNumber}"
+                )
             }
         }
     }
@@ -74,7 +73,6 @@ class ProfileFragment : BaseFragment<ProfileViewModel>(R.layout.fragment_profile
             }
             ProfileState.UiLabel.ShowProgressBar ->
                 binding.flProgress.isVisible = true
-
         }
     }
 }

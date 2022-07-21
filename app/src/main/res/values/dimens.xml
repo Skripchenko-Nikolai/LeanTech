@@ -45,5 +45,6 @@
 
     <!-- text_size -->
     <dimen name="text_large">18sp</dimen>
+    <dimen name="text_x_large">20sp</dimen>
     <dimen name="text_xxx_large">24sp</dimen>
 </resources>
